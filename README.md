@@ -1,6 +1,6 @@
-# mcsp-fce
+# Blue Ocean
 
-***Collaborative FCE Project with a focus on Front End and service integration.***
+***Full Stack Collaborative Project that will allow adminstrators to have visibility on students transition from the miltary to civilian life and give students a road map to transition succesfully out of the military.***
 
 ---------------------------------------------------
 

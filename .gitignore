@@ -1,3 +1,9 @@
 /node_modules/
 package-lock.json
 /dist/bundle.js
+/node_modules/
+**/*bundle.js
+.DS_Store
+**/*.icloud
+**/*-lock*.json
+./.*/

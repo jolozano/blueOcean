@@ -8,12 +8,6 @@ export default class App extends Component {
     this.state = {};
   }
 
-  componentDidMount() {
-    fetch("/api/tweets")
-      .then((response) => response.json())
-      .then((data) => console.log(data));
-  }
-
   render() {
     return <div>My React MVP</div>;
   }
