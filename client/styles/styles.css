@@ -21,12 +21,30 @@ h1 {
   width: 100vw;
   height: 100vh;
   background-color: white;
+  display: flex;
+}
+
+.banner {
+  width: 70%;
+  margin-left: 5%;
+  margin-top: 2%;
+  height: 20.9%;
+  background-color: blue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background-image: url('banner.jpg');
+}
+
+.banner-title {
+  font-size: 3rem;
 }
 
 .phase-bar {
   height: 100%;
   width: 20%;
-  min-width: 20%;
+  /* min-width: 18rem; */
   background-color: white;
   display: flex;
   flex-wrap: wrap;
@@ -63,12 +81,13 @@ h1 {
   width: 100%;
   padding: 0rem 1.75rem;
   overflow-y: auto;
-  background:#c6c6c6; 
+  background:whitesmoke; 
 }
 
 .student-phase-list-item {
   padding: .5rem;
   font-family: Lato, sans-serif;
+  font-size: .8rem;
 }
 
 .student-phase-list-item:hover {

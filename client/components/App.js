@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import PhaseBar from './PhaseBar'
+import PhaseBar from './PhaseBar';
+import Banner from './Banner';
 
 export default class App extends Component {
   constructor(props) {
@@ -12,6 +13,7 @@ export default class App extends Component {
     return (
       <div className={"wrapper"}>
         <PhaseBar />
+        <Banner />
       </div>
     ) 
   }
