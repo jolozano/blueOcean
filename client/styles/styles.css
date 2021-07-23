@@ -4,4 +4,74 @@
   padding: 0;
   font-size: 1rem;
   font-family: inherit;
+  font-family: Montserrat, sans-serif;
+  box-sizing: border-box;
+}
+
+h1 {
+  padding: 0px;
+  margin: 0px;
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Montserrat&display=swap');
+
+.wrapper {
+  width: 100vw;
+  height: 100vh;
+  background-color: white;
+}
+
+.phase-bar {
+  height: 100%;
+  width: 20%;
+  min-width: 20%;
+  background-color: white;
+  display: flex;
+  flex-wrap: wrap;
+  border-right: solid 1px #343940;
+  box-shadow: 5px 0px 10px rgba(0,0,0,.15);
+}
+
+.phase-box {
+  width: 100%;
+  height: 16.666%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.phase-title {
+  width: 100%;
+  height: 25%;
+  background:#343940;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+  margin: 0px;
+}
+
+.phase-box-content {
+  height: 75%;
+  width: 100%;
+}
+
+.student-phase-list {
+  height: 100%;
+  width: 100%;
+  padding: 0rem 1.75rem;
+  overflow-y: auto;
+  background:#c6c6c6; 
+}
+
+.student-phase-list-item {
+  padding: .5rem;
+  font-family: Lato, sans-serif;
+}
+
+.student-phase-list-item:hover {
+  cursor: pointer;
+  text-decoration: underline;
 }
