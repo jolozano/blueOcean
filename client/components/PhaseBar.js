@@ -3,7 +3,7 @@ import React from 'react';
 class PhaseBar extends React.Component {
     render () {
         return (
-        <div className={"phase-bar"}>
+        <aside className={"phase-bar"}>
             <div className={"phase-box"}>
                 <div className={"phase-title"}>
                     <h1>Phase 1 (180 days out)</h1>
@@ -73,7 +73,7 @@ class PhaseBar extends React.Component {
                     </ol>
                 </div>
             </div>
-        </div>
+        </aside>
         )
     }
 }
