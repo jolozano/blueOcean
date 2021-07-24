@@ -1,18 +1,6 @@
 import React from 'react';
 
 class Banner extends React.Component {
-<<<<<<< HEAD
-    render () {
-        return (
-            <header className={"banner"}>
-                <h1 className={"banner-title"}>
-                    Transition Tracker
-                </h1>
-            </header>
-        )
-    }
-}
-=======
     constructor () {
         super();
     }
@@ -25,6 +13,5 @@ class Banner extends React.Component {
         ) 
     }
 } 
->>>>>>> main
 
 export default Banner;

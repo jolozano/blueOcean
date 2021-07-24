@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import PhaseBar from './PhaseBar';
 import Banner from './Banner';
 import StudentProfile from './StudentProfile';
+import Footer from './Footer';
 
 export default class App extends Component {
   constructor(props) {
@@ -29,6 +30,7 @@ export default class App extends Component {
         <section className={'main-content'}>
             <Banner />
             <StudentProfile mockData={mockData} />
+            <Footer />
         </section>
       </div>
     ) 
