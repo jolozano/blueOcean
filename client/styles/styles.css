@@ -4,4 +4,146 @@
   padding: 0;
   font-size: 1rem;
   font-family: inherit;
+  font-family: Montserrat, sans-serif;
+  box-sizing: border-box;
+}
+
+h1 {
+  padding: 0px;
+  margin: 0px;
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Montserrat&display=swap');
+
+.wrapper {
+  width: 100vw;
+  height: 100vh;
+  background-color: white;
+  display: flex;
+}
+
+.banner {
+  width: 70%;
+  height: 20.9%;
+  background-color: blue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  /* background-image: url('banner.jpg'); */
+}
+
+.banner-title {
+  font-size: 3rem;
+}
+
+.phase-bar {
+  height: 100%;
+  width: 20%;
+  background-color: white;
+  display: flex;
+  flex-wrap: wrap;
+  border-right: solid 1px #343940;
+  box-shadow: 5px 0px 10px rgba(0,0,0,.15);
+}
+
+.phase-box {
+  width: 100%;
+  height: 16.666%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.phase-title {
+  width: 100%;
+  height: 25%;
+  background:#343940;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+  margin: 0px;
+}
+
+.phase-box-content {
+  height: 75%;
+  width: 100%;
+}
+
+.student-phase-list {
+  height: 100%;
+  width: 100%;
+  padding: 0rem 1.75rem;
+  overflow-y: auto;
+  background:whitesmoke; 
+}
+
+.student-phase-list-item {
+  padding: .5rem;
+  font-family: Lato, sans-serif;
+  font-size: .8rem;
+}
+
+.student-phase-list-item:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.student-profile {
+  width: 500px;
+  width: 70%;
+  display: flex;
+  background-color:#343940;
+  box-shadow: 5px 0px 10px rgba(0,0,0,.15);
+}
+
+.student-profile-table {
+  border-collapse: collapse;
+  width: 65%;
+}
+
+.student-profile-table td, tr, th {
+  border: solid 1px #343940;
+  box-sizing: border-box;
+  padding: 1rem;
+}
+
+.student-profile-table td {
+  text-align: center;
+}
+
+.student-profile-table ul {
+  width: 80%;
+  margin: auto;
+}
+
+.student-profile-table tr:nth-child(even) {
+  background-color: whitesmoke;
+}
+
+.student-profile-table tr:nth-child(odd) {
+  background-color: #343940;
+  color: white;
+}
+
+.student-profile-img-canvas {
+  height: 100%;
+  width: 35%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: solid 1px #343940;
+  border-left: 0px;
+}
+
+.main-content {
+  height: 100%;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
 }
