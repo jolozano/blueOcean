@@ -7,3 +7,4 @@ package-lock.json
 **/*.icloud
 **/*-lock*.json
 ./.*/
+/public/bundle.js
