@@ -45,14 +45,14 @@ class StudentProfile extends React.Component {
                             <td>
                                 <ul>
                                     {mockData.deliverables.map((item)=>{
-                                        return <li key={item.id}>{item} </li>
+                                        return <li key={item.id} >{item} </li>
                                     })}
                                 </ul>
                             </td>
                             <td>
                                 <ul>
                                     {mockData.completedTasks.map((item)=>{
-                                        return <li key={item.id}>{item} </li>
+                                        return <li key={item.id} >{item} </li>
                                     })}
                                 </ul>
                             </td>
