@@ -247,10 +247,10 @@ var myobj = [
     { name: 'Viola', address: 'Sideway 1633'}
 ];
 
-const inst = new Mongo_Instance()
 
 
 
+// const inst = new Mongo_Instance()
 async function test_methods (){
     // inst.run("debug", {a:1,b:2,c:3,d:4})
     inst.run ("set_collection", "table1");

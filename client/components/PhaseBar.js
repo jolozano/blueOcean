@@ -1,6 +1,20 @@
 import React from 'react';
 
 class PhaseBar extends React.Component {
+    constructor(){
+        this.state = {}
+    }
+
+    getStudents(admin_id){
+        // Primary method to make a GET all students assigned to admin
+        fetch( '/api/search/history' )
+            .then((response) => response.json())
+            .then((data) => {
+                if(data) this.setState({ history: data[0] });
+                else alert("Sorry, I couldn't get your students...");
+            } );
+    }
+
     render () {
         return (
         <aside className={"phase-bar"}>

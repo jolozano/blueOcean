@@ -1,8 +1,12 @@
 import React from 'react';
 
 class StudentProfile extends React.Component {
+    // Detail page of a student
     constructor (props) {
         super()
+        this.state = {
+            selected_student = 10    // ID of student selected
+        }
     }
 
     render () {
