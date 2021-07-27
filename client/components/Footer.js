@@ -9,6 +9,7 @@ class Footer extends React.Component {
         return (
             <footer className={"footer"}>
                 <button className={"new-cohort-button"}>Create Cohort</button>
+                <div className={"copyright"}>©Copyright 2021 Danny's Angels</div>
             </footer>
         )
     }
