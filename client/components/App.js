@@ -1,24 +1,26 @@
 import React, { Component } from "react";
-import CohortBar from './CohortBar';
 import Banner from './Banner';
-import StudentProfile from './StudentProfile';
 import Footer from './Footer';
-import CohortProfile from './CohortProfile';
+import CohortBar from './AdminPage/CohortBar';
+import CohortProfile from './AdminPage/CohortProfile';
+import StudentProfile from './AdminPage/StudentProfile';
+
 
 export default class App extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      currentPage: "Admin-Home" 
+      selected_student : 0    // ID of student selected
     };
-
-    this.changePage = this.changePage.bind(this);
   }
 
-  changePage (page) {
-    this.setState({currentPage:page})
-    console.log('page is', page)
+  change_student(event){
+    // Callback for child componet to call when a student name is clicked on
+    // in the PhaseBar componet
+    const new_id = Number.parseInt( event.target.value );
+    if(typeof(new_id)==Number) this.setState({selected_student:new_id});
+    event.preventDefault();
   }
 
   render() {
@@ -39,17 +41,6 @@ export default class App extends Component {
 
     let cohortList = [{name: 'MCSP-07'},{name: 'MCSP-08'},{name: 'MCSP-09'},{name: 'MCSP-10'},{name: 'MCSP-11'}]
 
-// 1. First Name
-// 2. Last name
-// 3. Cohort
-// 4. ets date
-// 5. ets countdown
-// 6. current duty station and unit
-// 7. personal email
-// 8. phone number
-// 9. marital status
-// 10. terminal leave (if applicable what date do you start)
-
     return (
       <div className={"wrapper"}>
         <CohortBar 
@@ -58,11 +49,10 @@ export default class App extends Component {
         />
         <section className={'main-content'}>
             <Banner />
-            {this.state.currentPage === 'Admin-Cohort-Profile' && <CohortProfile />}
-            {this.state.currentPage === 'Admin-Student-Profile' && <StudentProfile mockData={mockData} />}
-            <Footer changePage={()=>{this.changePage("Admin-Student-Profile")}} />
+            <StudentProfile mockData={mockData} studentID={ this.state.selected_student } />
+            <Footer />
         </section>
       </div>
-    ) 
+    )
   }
 }

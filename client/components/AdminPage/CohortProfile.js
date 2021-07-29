@@ -8,7 +8,7 @@ class CohortProfile extends React.Component {
     render () {
         return (
             <div>
-                Cohort Profile Page
+                Cohort Profile Page 
             </div>
         )
     }

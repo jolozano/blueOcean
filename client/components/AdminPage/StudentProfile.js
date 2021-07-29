@@ -1,8 +1,12 @@
 import React from 'react';
 
 class StudentProfile extends React.Component {
+    // Detail page of a student
     constructor (props) {
         super()
+        this.state = {
+            selected_student: 10    // ID of student selected
+        }
     }
 
     render () {
@@ -41,7 +45,7 @@ class StudentProfile extends React.Component {
                         </tr>
                         <tr>
                             <td>{mockData.etsDate}</td>
-                            <td>20 Days</td>
+                            <td>20 Days</td>657
                         </tr>
                         <tr>
                             <td>Phone Number:</td>

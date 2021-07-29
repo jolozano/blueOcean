@@ -19,6 +19,8 @@
   },
   "dependencies": {
     "express": "^4.17.1",
+    "faker": "^5.5.3",
+    "mongodb": "^4.0.1",
     "pg": "^8.6.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6"
