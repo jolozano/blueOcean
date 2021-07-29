@@ -11,7 +11,7 @@ class StudentProfile extends React.Component {
             <div className={"student-profile"}>
                 <table className={"student-profile-table"}>
                     <tbody>
-                        <tr>
+                        <tr>    
                             <td>First Name:</td>
                             <td>Last Name:</td>
                         </tr>
@@ -25,7 +25,15 @@ class StudentProfile extends React.Component {
                         </tr>
                         <tr>
                             <td>MCSP-07</td>
-                            <td>Tony65@gmail.com</td>
+                            <td>TonyRobbins@gmail.com</td>
+                        </tr>
+                        <tr>
+                            <td>Gender</td>
+                            <td>Terminal Leave</td>
+                        </tr>
+                        <tr>
+                            <td>Male</td>
+                            <td>August 1</td>
                         </tr>
                         <tr>
                             <td>ETS Date:</td>
@@ -36,10 +44,18 @@ class StudentProfile extends React.Component {
                             <td>20 Days</td>
                         </tr>
                         <tr>
-                            <td>Deliverables:</td>
+                            <td>Phone Number:</td>
                             <td>
-                                Completed Tasks:
+                                Marital Status:
                             </td>
+                        </tr>
+                        <tr>
+                            <td>503-423-3212</td>
+                            <td>Single</td>
+                        </tr>
+                        <tr>
+                            <td>Deliverables</td>
+                            <td>Completed Tasks</td>
                         </tr>
                         <tr>
                             <td>
@@ -60,7 +76,7 @@ class StudentProfile extends React.Component {
                     </tbody>
                     </table>
                     <div className={"student-profile-img-canvas"}>
-                        <img className={"student-profile-img"} src={mockData.selfieURL} width="80%" height="80%"></img>
+                        <img className={"student-profile-img"} src={mockData.selfieURL} width="80%" height="75%"></img>
                     </div>
             </div>
         )

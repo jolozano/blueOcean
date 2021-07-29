@@ -1,14 +1,14 @@
 import React from 'react';
 
 class Footer extends React.Component {
-    constructor () {
-        super();
+    constructor (props) {
+        super(props);
     }
 
     render () {
         return (
             <footer className={"footer"}>
-                <button className={"new-cohort-button"}>Create Cohort</button>
+                <button onClick={this.props.changePage} className={"new-student-button"}>Add Student</button>
                 <div className={"copyright"}>©Copyright 2021 Danny's Angels</div>
             </footer>
         )
