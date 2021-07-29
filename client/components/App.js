@@ -9,7 +9,7 @@ export default class App extends Component {
     super(props);
 
     this.state = {
-      selected_student : 0    // ID of student selected
+      selected_student: 0    // ID of student selected
     };
   }
 
