@@ -5,7 +5,7 @@ class StudentProfile extends React.Component {
     constructor (props) {
         super()
         this.state = {
-            selected_student = 10    // ID of student selected
+            selected_student: 10    // ID of student selected
         }
     }
 
