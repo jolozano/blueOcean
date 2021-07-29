@@ -24,7 +24,8 @@ const students = [
 
 
 class PhaseBar extends React.Component {
-    constructor(){
+    constructor() {
+        super();
         this.state = {}
     }
 
