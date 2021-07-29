@@ -45,7 +45,7 @@ class StudentProfile extends React.Component {
                         </tr>
                         <tr>
                             <td>{mockData.etsDate}</td>
-                            <td>20 Days</td>657
+                            <td>20 Days</td>
                         </tr>
                         <tr>
                             <td>Phone Number:</td>

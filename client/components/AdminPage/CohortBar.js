@@ -6,7 +6,6 @@ class CohortBar extends React.Component {
         super(props);
     }
     render () {
-        console.log(this.props.cohortList)
         return (
         <aside className={"cohort-bar"}>
             <div className={"cohort-bar-title-box"}>

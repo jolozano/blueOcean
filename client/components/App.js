@@ -11,7 +11,8 @@ export default class App extends Component {
     super(props);
 
     this.state = {
-      selected_student : 0    // ID of student selected
+      selected_student: 0,
+      currentPage: 'Admin-Home'    // ID of student selected
     };
   }
 
@@ -21,6 +22,10 @@ export default class App extends Component {
     const new_id = Number.parseInt( event.target.value );
     if(typeof(new_id)==Number) this.setState({selected_student:new_id});
     event.preventDefault();
+  }
+
+  changePage (page) {
+    this.setState({currentPage:page})
   }
 
   render() {
@@ -49,8 +54,10 @@ export default class App extends Component {
         />
         <section className={'main-content'}>
             <Banner />
-            <StudentProfile mockData={mockData} studentID={ this.state.selected_student } />
-            <Footer />
+            {this.state.currentPage === 'Admin-Student-Profile' && 
+            <StudentProfile  mockData={mockData} studentID={ this.state.selected_student } />}
+            {this.state.currentPage === 'Admin-Cohort-Profile' && <CohortProfile />}
+            <Footer  changePage={()=>{this.changePage('Admin-Student-Profile')}}/>
         </section>
       </div>
     )
