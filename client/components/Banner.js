@@ -8,7 +8,7 @@ class Banner extends React.Component {
     render () {
         return (
             <header className={"banner"}>
-                <h1 className={"banner-title"}>Transition App</h1>
+                <h1 className={"banner-title"}>Transition Tracker App</h1>
             </header>
         ) 
     }

@@ -1,9 +1,8 @@
 import React, { Component } from "react";
-import PhaseBar from './PhaseBar';
+import PhaseBar from './AdminPage/PhaseBar';
 import Banner from './Banner';
-import StudentProfile from './StudentProfile';
+import StudentProfile from './AdminPage/StudentProfile';
 import Footer from './Footer';
-import e from "express";
 
 export default class App extends Component {
   constructor(props) {

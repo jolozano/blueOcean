@@ -1,5 +1,28 @@
 import React from 'react';
 
+// db.get ( "" )
+const students = [
+    {
+        firstName: 'Tony',
+        lastName: 'Robbins',
+        currentPhase: 1,
+        etsDate: 'August 20, 2021',
+        deliverables: ['Complete capstone', 'CIF', 'Clear barracks'],
+        completedTasks: ['SFL TAP courses'],
+        selfieURL: 'https://www.irishtimes.com/polopoly_fs/1.4097152.1574880860!/image/image.jpg_gen/derivatives/ratio_1x1_w1200/image.jpg'
+    },
+    {
+        firstName: 'Tony',
+        lastName: 'Robbins',
+        currentPhase: 1,
+        etsDate: 'August 20, 2021',
+        deliverables: ['Complete capstone', 'CIF', 'Clear barracks'],
+        completedTasks: ['SFL TAP courses'],
+        selfieURL: 'https://www.irishtimes.com/polopoly_fs/1.4097152.1574880860!/image/image.jpg_gen/derivatives/ratio_1x1_w1200/image.jpg'
+    }
+]
+
+
 class PhaseBar extends React.Component {
     constructor(){
         this.state = {}

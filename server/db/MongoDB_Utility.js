@@ -10,7 +10,6 @@ sudo mongod --dbpath /var/lib/mongodb/ --journal
 // }
 // const porque = require('why-is-node-running')
 const MongoClient = require('mongodb').MongoClient;
-const faker = require('faker');
 const fs = require('fs');
 
 class Mongo_Instance{
@@ -275,3 +274,4 @@ async function test_methods (){
     // console.log("CURSOR 2: ", inst.current_collection_obj.find({}).count )
 }
 
+const inst = new Mongo_Instance()

@@ -1,16 +1,395 @@
 [
-    { "name": "John", "address": "Highway 71"},
-    { "name": "Peter", "address": "Lowstreet 4"},
-    { "name": "Amy", "address": "Apple st 652"},
-    { "name": "Hannah", "address": "Mountain 21"},
-    { "name": "Michael", "address": "Valley 345"},
-    { "name": "Sandy", "address": "Ocean blvd 2"},
-    { "name": "Betty", "address": "Green Grass 1"},
-    { "name": "Richard", "address": "Sky st 331"},
-    { "name": "Susan", "address": "One way 98"},
-    { "name": "Vicky", "address": "Yellow Garden 2"},
-    { "name": "Ben", "address": "Park Lane 38"},
-    { "name": "William", "address": "Central st 954"},
-    { "name": "Chuck", "address": "Main Road 989"},
-    { "name": "Viola", "address": "Sideway 1633"}
+    {
+        "id": {
+            "$oid": "61023fd6fc13ae035a000078"
+        },
+        "credentials": {
+            "password": "vYIWwvQur1o",
+            "username": "mbaumber0"
+        },
+        "pii": {
+            "first_name": "Martynne",
+            "last_name": "Baumber",
+            "email": "mbaumber0@istockphoto.com",
+            "gender": "Female",
+            "ets_date": "6/27/2021",
+            "current_unit": "187 Novick Street",
+            "phone_number": "950-801-8257",
+            "marital_staus": "Married",
+            "terminal_date": "10/17/2021",
+            "student_img": "http://dummyimage.com/191x100.png/dddddd/000000"
+        },
+        "tasks": {
+            "uncompleted": [
+                25,
+                78,
+                53,
+                34
+            ],
+            "completed": [
+                95,
+                51,
+                4,
+                92
+            ],
+            "current": 21
+        },
+        "admin_id": {
+            "$oid": "61023fd6fc13ae035a000079"
+        }
+    },
+    {
+        "id": {
+            "$oid": "61023fd6fc13ae035a00007a"
+        },
+        "credentials": {
+            "password": "8Su7bbjmZQ",
+            "username": "mpyott1"
+        },
+        "pii": {
+            "first_name": "Mandi",
+            "last_name": "Pyott",
+            "email": "mpyott1@cafepress.com",
+            "gender": "Genderfluid",
+            "ets_date": "2/9/2021",
+            "current_unit": "454 Atwood Court",
+            "phone_number": "238-505-7670",
+            "marital_staus": "Married",
+            "terminal_date": null,
+            "student_img": "http://dummyimage.com/168x100.png/dddddd/000000"
+        },
+        "tasks": {
+            "uncompleted": [
+                20,
+                19,
+                25,
+                90
+            ],
+            "completed": [
+                6,
+                73,
+                85,
+                78
+            ],
+            "current": 6
+        },
+        "admin_id": null
+    },
+    {
+        "id": {
+            "$oid": "61023fd6fc13ae035a00007b"
+        },
+        "credentials": {
+            "password": "g4vTSn",
+            "username": "kbellringer2"
+        },
+        "pii": {
+            "first_name": "Kaile",
+            "last_name": "Bellringer",
+            "email": "kbellringer2@blogger.com",
+            "gender": "Polygender",
+            "ets_date": "2/12/2022",
+            "current_unit": "46 Green Ridge Drive",
+            "phone_number": "421-145-5015",
+            "marital_staus": "Single",
+            "terminal_date": "1/24/2021",
+            "student_img": "http://dummyimage.com/143x100.png/ff4444/ffffff"
+        },
+        "tasks": {
+            "uncompleted": [
+                14,
+                84,
+                99,
+                73
+            ],
+            "completed": [
+                37,
+                43,
+                10,
+                59
+            ],
+            "current": 20
+        },
+        "admin_id": {
+            "$oid": "61023fd6fc13ae035a00007c"
+        }
+    },
+    {
+        "id": {
+            "$oid": "61023fd6fc13ae035a00007d"
+        },
+        "credentials": {
+            "password": "zHklmWlJzCL",
+            "username": "lconcklin3"
+        },
+        "pii": {
+            "first_name": "Livvyy",
+            "last_name": "Concklin",
+            "email": "lconcklin3@vinaora.com",
+            "gender": "Polygender",
+            "ets_date": "4/15/2022",
+            "current_unit": "29882 Jackson Point",
+            "phone_number": "954-290-4080",
+            "marital_staus": "Married",
+            "terminal_date": "11/14/2020",
+            "student_img": "http://dummyimage.com/241x100.png/cc0000/ffffff"
+        },
+        "tasks": {
+            "uncompleted": [
+                99,
+                6,
+                11,
+                37
+            ],
+            "completed": [
+                95,
+                31,
+                26,
+                38
+            ],
+            "current": 49
+        },
+        "admin_id": {
+            "$oid": "61023fd6fc13ae035a00007e"
+        }
+    },
+    {
+        "id": {
+            "$oid": "61023fd6fc13ae035a00007f"
+        },
+        "credentials": {
+            "password": "QYHrZMoXK0v",
+            "username": "hbezarra4"
+        },
+        "pii": {
+            "first_name": "Hannie",
+            "last_name": "Bezarra",
+            "email": "hbezarra4@livejournal.com",
+            "gender": "Non-binary",
+            "ets_date": "11/8/2021",
+            "current_unit": "65 Northfield Place",
+            "phone_number": "419-759-5975",
+            "marital_staus": "Single",
+            "terminal_date": "8/1/2021",
+            "student_img": "http://dummyimage.com/175x100.png/5fa2dd/ffffff"
+        },
+        "tasks": {
+            "uncompleted": [
+                79,
+                6,
+                97,
+                66
+            ],
+            "completed": [
+                49,
+                34,
+                45,
+                74
+            ],
+            "current": 16
+        },
+        "admin_id": {
+            "$oid": "61023fd6fc13ae035a000080"
+        }
+    },
+    {
+        "id": {
+            "$oid": "61023fd6fc13ae035a000081"
+        },
+        "credentials": {
+            "password": "SpM13QSWx",
+            "username": "bmuckleston5"
+        },
+        "pii": {
+            "first_name": "Bald",
+            "last_name": "Muckleston",
+            "email": "bmuckleston5@seesaa.net",
+            "gender": "Agender",
+            "ets_date": "4/29/2022",
+            "current_unit": "7 Ohio Junction",
+            "phone_number": "526-869-6625",
+            "marital_staus": "Married",
+            "terminal_date": "10/30/2021",
+            "student_img": "http://dummyimage.com/100x100.png/ff4444/ffffff"
+        },
+        "tasks": {
+            "uncompleted": [
+                20,
+                6,
+                82,
+                95
+            ],
+            "completed": [
+                61,
+                70,
+                54,
+                64
+            ],
+            "current": 13
+        },
+        "admin_id": {
+            "$oid": "61023fd6fc13ae035a000082"
+        }
+    },
+
+
+
+
+    {
+        "id": {
+            "$oid": "61023fd6fc13ae035a000083"
+        },
+        "credentials": {
+            "password": "611UJ6CX",
+            "username": "lpoints6"
+        },
+        "pii": {
+            "first_name": "Lynnelle",
+            "last_name": "Points",
+            "email": "lpoints6@wisc.edu",
+            "gender": "Agender",
+            "ets_date": "5/10/2022",
+            "current_unit": "32450 1st Plaza",
+            "phone_number": "753-811-9263",
+            "marital_staus": "Single",
+            "terminal_date": null,
+            "student_img": "http://dummyimage.com/206x100.png/dddddd/000000"
+        },
+        "tasks": {
+            "uncompleted": [
+                30,
+                65,
+                93,
+                2
+            ],
+            "completed": [
+                66,
+                44,
+                27,
+                34
+            ],
+            "current": 73
+        },
+        "admin_id": null
+    },
+
+
+
+    {
+        "id": {
+            "$oid": "61023fd6fc13ae035a000084"
+        },
+        "credentials": {
+            "password": "dN358Xw",
+            "username": "lalliot7"
+        },
+        "pii": {
+            "first_name": "Lurlene",
+            "last_name": "Alliot",
+            "email": "lalliot7@prweb.com",
+            "gender": "Male",
+            "ets_date": "3/13/2022",
+            "current_unit": "150 Longview Trail",
+            "phone_number": "193-233-9214",
+            "marital_staus": "Lone Wolf",
+            "terminal_date": "6/11/2021",
+            "student_img": "http://dummyimage.com/224x100.png/dddddd/000000"
+        },
+        "tasks": {
+            "uncompleted": [
+                77,
+                51,
+                58,
+                84
+            ],
+            "completed": [
+                22,
+                2,
+                86,
+                62
+            ],
+            "current": 41
+        },
+        "admin_id": {
+            "$oid": "61023fd6fc13ae035a000085"
+        }
+    },
+    {
+        "id": {
+            "$oid": "61023fd6fc13ae035a000086"
+        },
+        "credentials": {
+            "password": "RA2kH0GIP0Q",
+            "username": "cwhooley8"
+        },
+        "pii": {
+            "first_name": "Cesaro",
+            "last_name": "Whooley",
+            "email": "cwhooley8@patch.com",
+            "gender": "Male",
+            "ets_date": "4/24/2021",
+            "current_unit": "067 Continental Point",
+            "phone_number": "234-432-5778",
+            "marital_staus": "Married",
+            "terminal_date": "6/16/2022",
+            "student_img": "http://dummyimage.com/156x100.png/5fa2dd/ffffff"
+        },
+        "tasks": {
+            "uncompleted": [
+                37,
+                7,
+                46,
+                78
+            ],
+            "completed": [
+                63,
+                61,
+                43,
+                99
+            ],
+            "current": 34
+        },
+        "admin_id": {
+            "$oid": "61023fd6fc13ae035a000087"
+        }
+    },
+    {
+        "id": {
+            "$oid": "61023fd6fc13ae035a000088"
+        },
+        "credentials": {
+            "password": "hNti9tpIGM",
+            "username": "wlockney9"
+        },
+        "pii": {
+            "first_name": "Wilmer",
+            "last_name": "Lockney",
+            "email": "wlockney9@123-reg.co.uk",
+            "gender": "Polygender",
+            "ets_date": "7/15/2021",
+            "current_unit": "8782 Hooker Avenue",
+            "phone_number": "712-339-5461",
+            "marital_staus": "Single",
+            "terminal_date": "4/21/2021",
+            "student_img": "http://dummyimage.com/125x100.png/5fa2dd/ffffff"
+        },
+        "tasks": {
+            "uncompleted": [
+                43,
+                87,
+                49,
+                95
+            ],
+            "completed": [
+                43,
+                11,
+                72,
+                86
+            ],
+            "current": 5
+        },
+        "admin_id": {
+            "$oid": "61023fd6fc13ae035a000089"
+        }
+    }
 ]
