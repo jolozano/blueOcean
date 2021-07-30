@@ -4,6 +4,7 @@ class CohortBar extends React.Component {
 
     constructor (props) {
         super(props);
+
     }
     render () {
         return (
@@ -16,7 +17,10 @@ class CohortBar extends React.Component {
                         return (
                             <li key={item.id} 
                             className={"cohort-bar-list-item"}
-                            onClick={()=>{this.props.changePage('Admin-Cohort-Profile')}}>
+                            onClick={(e)=>{
+                                this.props.change_page('Admin-Cohort-Profile');
+                                this.props.change_cohort(e.target.textContent);
+                                }}>
                                 {item.name}
                             </li>
                         )

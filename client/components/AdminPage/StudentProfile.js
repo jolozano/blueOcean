@@ -20,8 +20,8 @@ class StudentProfile extends React.Component {
                             <td>Last Name:</td>
                         </tr>
                         <tr>
-                            <td>{mockData.firstName}</td>
-                            <td>{mockData.lastName}</td>
+                            <td>John</td>
+                            <td>Wayne</td>
                         </tr>
                         <tr>
                             <td>Cohort:</td>
@@ -44,7 +44,7 @@ class StudentProfile extends React.Component {
                             <td>ETS Countdown:</td>
                         </tr>
                         <tr>
-                            <td>{mockData.etsDate}</td>
+                            <td>August 13th, 2021</td>
                             <td>20 Days</td>
                         </tr>
                         <tr>
@@ -64,23 +64,20 @@ class StudentProfile extends React.Component {
                         <tr>
                             <td>
                                 <ul>
-                                    {mockData.deliverables.map((item)=>{
-                                        return <li key={item.id} >{item} </li>
-                                    })}
+                                    <li>Phase 2 Medical</li>
+                                    <li>CIF Turn in</li>
                                 </ul>
                             </td>
                             <td>
                                 <ul>
-                                    {mockData.completedTasks.map((item)=>{
-                                        return <li key={item.id} >{item} </li>
-                                    })}
+                                <li>Phase 1 Medical</li>
                                 </ul>
                             </td>
                         </tr>
                     </tbody>
                     </table>
                     <div className={"student-profile-img-canvas"}>
-                        <img className={"student-profile-img"} src={mockData.selfieURL} width="80%" height="75%"></img>
+                        <img className={"student-profile-img"} src={'https://cdn.britannica.com/82/136182-050-6BB308B7/John-Wayne.jpg'} width="80%" height="75%"></img>
                     </div>
             </div>
         )

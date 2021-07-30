@@ -103,10 +103,11 @@ h1 {
 }
 
 .student-profile {
-  width: 70%;
+  width: 80%;
   display: flex;
   background-color:#343940;
   box-shadow: 0px 0px 10px rgba(0,0,0,.15);
+  margin: 1rem 0rem;
 }
 
 .student-profile-table {
@@ -117,7 +118,7 @@ h1 {
 .student-profile-table td, tr, th {
   border: solid 1px #343940;
   box-sizing: border-box;
-  padding: .25rem;
+  padding: .25rem 0rem;
 }
 
 .student-profile-table tr:last-child {
@@ -135,6 +136,14 @@ h1 {
 
 .student-profile-table tr:nth-child(even) {
   background-color: whitesmoke;
+}
+
+.student-profile-table td:nth-child(even) {
+  width: 50%;
+}
+
+.student-profile-table td:nth-child(odd) {
+  width: 50%;
 }
 
 .student-profile-table tr:nth-child(odd) {
@@ -189,6 +198,22 @@ h1 {
   background-color: #343940;
   color: white;
   font-weight: bolder;
+}
+
+.cohort-profile-title {
+  font-size: 4rem;
+  width: 100%;
+  text-align: center;
+}
+
+.cohort-profile-content {
+  height: 60%;
+  width: 95%;
+  display: flex;
+  justify-content: center;
+  overflow-y: auto;
+  flex-wrap: wrap;
+  padding: 1rem;
 }
 
 .new-student-button:hover {
