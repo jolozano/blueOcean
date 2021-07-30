@@ -29,7 +29,7 @@ class StudentProfile extends React.Component {
                         </tr>
                         <tr>
                             <td>MCSP-07</td>
-                            <td>TonyRobbins@gmail.com</td>
+                            <td>JohnWayne@gmail.com</td>
                         </tr>
                         <tr>
                             <td>Gender</td>
