@@ -1,46 +1,128 @@
 import React, { Component } from "react";
-import PhaseBar from './AdminPage/PhaseBar';
 import Banner from './Banner';
-import StudentProfile from './AdminPage/StudentProfile';
 import Footer from './Footer';
+import CohortBar from './AdminPage/CohortBar';
+import CohortProfile from './AdminPage/CohortProfile';
+import StudentProfile from './AdminPage/StudentProfile';
 
 export default class App extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      selected_student : 0    // ID of student selected
+      selected_student: 0, // ID of student selected
+      selected_cohort: '', // name of the cohort selected
+      current_page: 'Admin-Home'    
     };
+
+    this.change_cohort = this.change_cohort.bind(this);
   }
 
   change_student(event){
-    // Callback for child componet to call when a student name is clicked on
-    // in the PhaseBar componet
+    // Callback for child component to call when a student name is clicked on
+    // in the CohortBar component
     const new_id = Number.parseInt( event.target.value );
     if(typeof(new_id)==Number) this.setState({selected_student:new_id});
     event.preventDefault();
   }
 
-  render() {
+  change_cohort(cohort_name) {
+    this.setState({selected_cohort: cohort_name});
+  }
 
-    const mockData = {
+  change_page (page) {
+    this.setState({current_page:page})
+  }
+
+
+
+  render() {
+    let cohortList = [{name: 'MCSP-07'},{name: 'MCSP-08'},{name: 'MCSP-09'},{name: 'MCSP-10'},{name: 'MCSP-11'}]
+    let studentList = 
+    [
+      {
       firstName: 'Tony',
       lastName: 'Robbins',
-      currentPhase: 1,
+      cohort: 'MCSP-07',
+      email: 'tonyrobbins@gmail.com',
+      gender: 'male',
+      terminalLeave: 'Aug 6',
       etsDate: 'August 20, 2021',
+      etsCountDown: '20 days',
+      phoneNumber: '523-423-2551',
+      maritalStatus: 'Single',
       deliverables: ['Complete capstone', 'CIF', 'Clear barracks'],
       completedTasks: ['SFL TAP courses'],
-      selfieURL: 'https://www.irishtimes.com/polopoly_fs/1.4097152.1574880860!/image/image.jpg_gen/derivatives/ratio_1x1_w1200/image.jpg'
-    };
-
+      currentPhase: 1,
+      selfieURL: 'https://i.pinimg.com/originals/35/5b/f7/355bf7c6116d655b605cbecf568223cc.jpg'
+    },
+    {
+      firstName: 'Johnny',
+      lastName: 'Cash',
+      cohort: 'MCSP-07',
+      email: 'cash@gmail.com',
+      gender: 'male',
+      terminalLeave: 'Aug 6',
+      etsDate: 'August 20, 2021',
+      etsCountDown: '20 days',
+      phoneNumber: '523-423-2551',
+      maritalStatus: 'Single',
+      deliverables: ['Complete capstone', 'CIF', 'Clear barracks'],
+      completedTasks: ['SFL TAP courses'],
+      currentPhase: 1,
+      selfieURL: 'https://i.pinimg.com/originals/35/5b/f7/355bf7c6116d655b605cbecf568223cc.jpg'
+    },
+    {
+      firstName: 'Shawn',
+      lastName: 'West',
+      cohort: 'MCSP-07',
+      email: 'cash@gmail.com',
+      gender: 'male',
+      terminalLeave: 'Aug 6',
+      etsDate: 'August 20, 2021',
+      etsCountDown: '20 days',
+      phoneNumber: '523-423-2551',
+      maritalStatus: 'Single',
+      deliverables: ['Complete capstone', 'CIF', 'Clear barracks'],
+      completedTasks: ['SFL TAP courses'],
+      currentPhase: 1,
+      selfieURL: 'https://i.pinimg.com/originals/35/5b/f7/355bf7c6116d655b605cbecf568223cc.jpg'
+    },
+    {
+      firstName: 'Suzie',
+      lastName: 'Q',
+      cohort: 'MCSP-07',
+      email: 'Suzie@hotmail.com',
+      gender: 'male',
+      terminalLeave: 'Aug 6',
+      etsDate: 'August 20, 2021',
+      etsCountDown: '20 days',
+      phoneNumber: '523-423-2551',
+      maritalStatus: 'Single',
+      deliverables: ['Complete capstone', 'CIF', 'Clear barracks'],
+      completedTasks: ['SFL TAP courses'],
+      currentPhase: 1,
+      selfieURL: 'https://i.pinimg.com/originals/35/5b/f7/355bf7c6116d655b605cbecf568223cc.jpg'
+    }
+  ];
 
     return (
       <div className={"wrapper"}>
-        <PhaseBar />
+        <CohortBar 
+        change_page={()=>{this.change_page("Admin-Cohort-Profile")}}
+        cohortList={cohortList}
+        change_cohort={this.change_cohort}
+        />
         <section className={'main-content'}>
             <Banner />
-            <StudentProfile mockData={mockData} studentID={ this.state.selected_student } />
-            <Footer />
+            {this.state.current_page === 'Admin-Student-Profile' && 
+            <StudentProfile studentID={ this.state.selected_student } />}
+            {this.state.current_page === 'Admin-Cohort-Profile' && 
+            <CohortProfile 
+            cohortList={cohortList}
+            selected_cohort={this.state.selected_cohort}
+            />}
+            <Footer  change_page={()=>{this.change_page('Admin-Student-Profile')}}/>
         </section>
       </div>
     )
