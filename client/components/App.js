@@ -5,6 +5,7 @@ import Footer from './Footer';
 import CohortBar from './AdminPage/CohortBar';
 import CohortProfile from './AdminPage/CohortProfile';
 import StudentProfile from './AdminPage/StudentProfile';
+import StudentQuestionnaire from "./StudentQuestionnaire";
 
 export default class App extends Component {
   constructor(props) {
@@ -126,6 +127,7 @@ export default class App extends Component {
             selected_cohort={this.state.selected_cohort}
             />}
             <Footer  change_page={()=>{this.change_page('Admin-Student-Profile')}}/>
+            <StudentQuestionnaire />
         </section>
       </div>
     )
