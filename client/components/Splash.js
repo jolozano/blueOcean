@@ -15,6 +15,7 @@ const Splash = () => {
                   <div className={"splash-content-para-two"}>
                     <h1 className={"splash-content-title"}>New Opportunities</h1>
                     <p>
+                    {/* <i className="fa fa-spinner fa-spin">no spinner but why</i> */}
                         Minim anim proident dolor tempor aliqua.Lorem commodo anim cillum et aliquip dolore veniam culpa incididunt commodo Lorem. Velit fugiat laboris exercitation nisi ipsum.
                     </p>
                   </div>
