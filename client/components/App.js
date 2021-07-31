@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Banner from './Banner';
+import Splash from './Splash';
 import Footer from './Footer';
 import CohortBar from './AdminPage/CohortBar';
 import CohortProfile from './AdminPage/CohortProfile';
@@ -115,7 +116,9 @@ export default class App extends Component {
         change_cohort={this.change_cohort}
         />
         <section className={'main-content'}>
+          
             <Banner />
+            {this.state.current_page === 'Admin-Home' && <Splash />}
             {this.state.current_page === 'Admin-Student-Profile' && 
             <StudentProfile studentID={ this.state.selected_student } />}
             {this.state.current_page === 'Admin-Cohort-Profile' && 
@@ -123,8 +126,9 @@ export default class App extends Component {
             cohortList={cohortList}
             selected_cohort={this.state.selected_cohort}
             />}
-            <Footer  change_page={()=>{this.change_page('Admin-Student-Profile')}}/>
-            <StudentQuestionnaire />
+            {this.state.current_page === 'Admin-Student-Questionnaire' && <StudentQuestionnaire />}
+            <Footer  change_page={()=>{this.change_page('Admin-Student-Questionnaire')}}/>
+            
         </section>
       </div>
     )
