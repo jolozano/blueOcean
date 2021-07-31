@@ -200,6 +200,12 @@ h1 {
   border: solid 1px #343940;
   margin-right: 2rem;
   margin-top: 1rem;
+  animation-name: splash-content-img-fade-in;
+  animation-duration: 800ms;
+  animation-delay: 300ms;
+  animation-fill-mode: both;
+  animation-timing-function: ease-in-out;
+  opacity: 0;
 }
 
 .splash-content-description {
@@ -212,6 +218,24 @@ h1 {
   font-size: 2rem;
   text-align: center;
   margin-bottom: 1rem;
+}
+
+.splash-content-para-one {
+  animation-name: splash-content-para-one-fade-in;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  animation-timing-function: ease-in-out;
+  animation-delay: 1s;
+  opacity: 0;
+}
+
+.splash-content-para-two {
+  animation-name: splash-content-para-two-fade-in;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  animation-timing-function: ease-in-out;
+  animation-delay: 1.5s;
+  opacity: 0;
 }
 
 .footer {
@@ -305,6 +329,43 @@ h1 {
 
 .new-student-button:active {
   transform:scale(.980);
+}
+
+@keyframes splash-content-img-fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(100px)
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes splash-content-para-one-fade-in {
+  0% {
+    opacity: 0;
+    transform: translateX(100px)
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes splash-content-para-two-fade-in {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px)
+  }
+
+  40% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
 
 @keyframes banner-fade-in {
