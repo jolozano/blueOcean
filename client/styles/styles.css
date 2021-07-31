@@ -254,6 +254,50 @@ h1 {
   padding: 1rem;
 }
 
+.student-questionnaire-content {
+  width: 100%;
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-y: auto;
+  flex-wrap: wrap;
+}
+
+.student-questionnaire-form {
+  line-height: 2.5rem;
+  margin: auto;
+}
+
+.student-questionnaire-form input[type="text"], input[type="integer"] {
+  padding: .2rem;
+}
+
+.student-questionnaire-title {
+  font-size: 3rem;
+  width: 100%;
+  margin: 1rem 0rem;
+  text-align: center;
+}
+
+.student-questionnaire-submit-button {
+  background-color: #343940;
+  color: white;
+  border: 0;
+  padding:.5rem;
+  border-radius: 16px;
+  width: 10rem;
+  display: block;
+  margin: 0rem auto;
+  align-self: center;
+}
+
+
+.student-questionnaire-submit-button:hover {
+  cursor: pointer;
+  background-color: black;
+}
+
 .new-student-button:hover {
   cursor: pointer;
   background-color: black;

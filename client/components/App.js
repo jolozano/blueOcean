@@ -126,8 +126,9 @@ export default class App extends Component {
             cohortList={cohortList}
             selected_cohort={this.state.selected_cohort}
             />}
-            <Footer  change_page={()=>{this.change_page('Admin-Student-Profile')}}/>
-            <StudentQuestionnaire />
+            {this.state.current_page === 'Admin-Student-Questionnaire' && <StudentQuestionnaire />}
+            <Footer  change_page={()=>{this.change_page('Admin-Student-Questionnaire')}}/>
+            
         </section>
       </div>
     )

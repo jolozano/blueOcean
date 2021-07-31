@@ -76,7 +76,7 @@ terminal_leavehandler = (event) => {
 
 
 handleSubmit = (event) => {
-    alert(`${this.state.firstName} ${this.state.lastName}  Registery Successful`)
+    alert(`${this.state.firstName} ${this.state.lastName}  Registry Successful`)
     console.log(this.state);
     this.setState({
         firstName: "",
@@ -99,10 +99,9 @@ handleSubmit = (event) => {
 
 render() {
     return (
-        <div>
-
-            <form onSubmit={this.handleSubmit}>
-                <h1>New Student Registration</h1>
+        <div className={"student-questionnaire-content"}>
+                <h1 className={"student-questionnaire-title"}>New Student Registration</h1>
+            <form className={"student-questionnaire-form"} onSubmit={this.handleSubmit}>
                 <label>FirstName :</label> <input type="text" value={this.state.firstName} onChange={this.firsthandler} placeholder="FirstName..." /><br />
                 <label>LastName :</label> <input type="text" value={this.state.lastName} onChange={this.lasthandler} placeholder="LastName..." /><br />
                 <label>Email :</label> <input type="text" value={this.state.email} onChange={this.emailhandler} placeholder="Email..." /><br />
@@ -122,7 +121,7 @@ render() {
                     <option defaultValue>Select Status</option>
                     <option value="Yes">Yes</option>
                     <option value="No">No</option>
-                <input type="submit" value="Rigester Now" />
+                <input className={'student-questionnaire-submit-button'} type="submit" value="Submit" />
                 
             </form>
 
