@@ -8,7 +8,7 @@ class Footer extends React.Component {
     render () {
         return (
             <footer className={"footer"}>
-                <button disabled="disabled" onClick={this.props.change_page} className={"new-student-button"}>Add Student</button>
+                <button onClick={this.props.change_page} className={"new-student-button"}>Add Student</button>
                 <div className={"copyright"}>©Copyright 2021 Danny's Angels</div>
             </footer>
         )
