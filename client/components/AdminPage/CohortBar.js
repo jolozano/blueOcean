@@ -1,18 +1,49 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faMinus, faPlus } from '@fortawesome/fontawesome-free-solid'
 
 class CohortBar extends React.Component {
 
     constructor (props) {
         super(props);
+        this.state = {
+            changing_cohort: false
+        }
 
+        this.add_cohort = this.add_cohort.bind(this);
+        this.remove_cohort = this.remove_cohort.bind(this);
     }
+
+    add_cohort () {
+        console.log('adding a cohort');
+        this.setState({changing_cohort: true});
+    }
+
+    remove_cohort () {
+        console.log('removing a cohort');
+        this.setState({changing_cohort: true});
+    }
+
+
     render () {
         return (
         <aside className={"cohort-bar"}>
+            <div className={"cohort-bar-control-box"}>
+                <div className={"cohort-bar-minus-box"}>
+                    <FontAwesomeIcon onClick={this.remove_cohort} className={'cohort-minus'} icon={faMinus} />
+                    <span>Remove Cohort</span>
+                </div>
+                <div className={"cohort-bar-add-box"}>
+                    <FontAwesomeIcon onClick={this.add_cohort} className={'cohort-plus'} icon={faPlus} />
+                    <span>Add Cohort</span>
+                </div>
+            </div>
+            {this.state.changing_cohort === true && <form className={"cohort-bar-form"}>
+                <input className={'cohort-bar-input'} placeholder="Enter Cohort"></input>
+            </form>}
             <div className={"cohort-bar-title-box"}>
                 <h1 className={"cohort-bar-title"}>Current Cohorts:</h1>
                 <ul className={"cohort-bar-list"}>
-
                     {this.props.cohortList.map((item)=>{
                         return (
                             <li key={item.id} 
