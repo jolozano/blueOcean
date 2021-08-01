@@ -59,12 +59,91 @@ h1 {
 .cohort-bar {
   height: 100%;
   width: 20%;
-  /* background-color: white; */
+  position: relative;
   background-color: #343940;
   display: flex;
   flex-wrap: wrap;
   border-right: solid 1px #343940;
   box-shadow: 5px 0px 10px rgba(0,0,0,.15);
+}
+
+.cohort-bar-control-box {
+  position: absolute;
+  width: 100%;
+  height: 8%;
+  bottom: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.cohort-bar-add-box {
+  height: 100%;
+  width: 7rem;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-left: 1rem;
+  user-select: none;
+}
+
+.cohort-bar-add-box span {
+  display: block;
+  font-size: .7rem;
+  text-align: center;
+  color: lightgray;
+  height: 50%;
+  width: 100%;
+  margin-top: .5rem;
+}
+
+.cohort-bar-minus-box span {
+  display: block;
+  font-size: .7rem;
+  text-align: center;
+  color: lightgray;
+  height: 50%;
+  width: 100%;
+  margin-bottom: -2px;
+  margin-top: .5rem;
+}
+
+.cohort-bar-minus-box {
+  height: 100%;
+  width: 7rem;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-right: 1rem;
+  user-select: none;
+}
+
+.cohort-minus {
+  font-size: 2rem;
+  color: rgb(120, 0, 0);
+  transition: 200ms ease-in-out;
+}
+
+.cohort-minus:hover {
+  cursor: pointer;
+  color: red;
+}
+
+.cohort-plus:hover {
+  cursor: pointer;
+  color: rgb(0, 255, 0);
+}
+
+.cohort-plus {
+  font-size: 2rem;
+  color: green;
+  transition: 200ms ease-in-out;
 }
 
 .cohort-bar-title-box {
@@ -100,6 +179,32 @@ h1 {
 .cohort-bar-list li:hover {
   cursor: pointer;
   background-color: black;
+}
+
+.cohort-bar-form {
+  width: 100%;
+  height: 4rem;
+  position: absolute;
+  bottom: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cohort-bar-input {
+  padding: .75rem;
+  border: 0;
+  border-radius: 16px;
+  background-color: inherit;
+  border: 1px solid lightgray;
+  color: white;
+  animation-name: cohort-bar-input-fade-in;
+  animation-duration: 400ms;
+  animation-timing-function: ease-in-out;
+}
+
+.cohort-bar-input:focus {
+  outline: none;
 }
 
 .student-profile {
@@ -201,10 +306,10 @@ h1 {
   margin-right: 2rem;
   margin-top: 1rem;
   animation-name: splash-content-img-fade-in;
-  animation-duration: 800ms;
+  animation-duration: 1s;
   animation-delay: 300ms;
   animation-fill-mode: both;
-  animation-timing-function: ease-in-out;
+  animation-timing-function: ease-out;
   opacity: 0;
 }
 
@@ -260,6 +365,10 @@ h1 {
   background-color: #343940;
   color: white;
   font-weight: bolder;
+}
+
+.new-student-button:focus {
+  outline: 0;
 }
 
 .cohort-profile-title {
@@ -385,5 +494,20 @@ h1 {
 
   100% {
     width: 100%;
+  }
+}
+
+@keyframes cohort-bar-input-fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
   }
 }
