@@ -1,8 +1,12 @@
 // https://stackoverflow.com/a/16371856/4447923
+// https://stackoverflow.com/a/34835813/4447923
 /*
 sudo rm /var/lib/mongodb/mongod.lock
 sudo mongod --dbpath /var/lib/mongodb/ --repair
 sudo mongod --dbpath /var/lib/mongodb/ --journal
+
+lsof -i :25
+ss -tanp | grep 5000
 */
 // const poo = [1,2,3,4]
 // for(item of poo){
@@ -36,7 +40,7 @@ class Mongo_Instance{
         if(target in requirements){
             const isNull = (var_id) => this[ variables[var_id] ]
             if( !requirements[target].every( isNull.bind(this) ) ) {
-                console.log(`[${target}] MongoDB Client not correctly configured.`)
+                console.log(`[${target}] Critical: Target missing specified dependencies.`)
                 return false;
             }
         }
@@ -46,11 +50,11 @@ class Mongo_Instance{
             //console.log(`[${target}] Process incremented`)
             this.processes += 1
             console.log(`[${target}]  Executing`)
-            await this[target](...parameters)
+            const callBack = () => this[target](...parameters)
+            setTimeout( callBack.bind(this), 100)
         }
         catch (err){
             console.log(`[${target}] ERROR: `,  err)
-
         }
         finally{
             //console.log(`[${target}] Process decremeneted`)
@@ -67,32 +71,13 @@ class Mongo_Instance{
             this.current_collection_obj = null
             this.current_db_obj = mongo_service.db( this.db_name );
             this.initialized = true
-        }
-        try {
-
-            test_methods()
-
-        }
-        finally{
-
-            /*
-            function closeOut(method){
-                setTimeout(async function(method ){
-                    const status =  await method()
-                    console.log("STATUS", status)
-                }.bind(this, method), 1000)
-            }
-            closeOut( this.debug )
-            */
-        //    const condition = ()=>{this.processes<=0}
-        //     this.execute_after( condition.bind(this), this.debug.bind(this, "AAAAASSSSS") )
-
-            this.start_closer()
+            // this.current_db_obj.getCollectionNames()
         }
     }
 
     set_collection(collection_name){
         this.current_collection_obj = this.current_db_obj.collection( collection_name );
+        console.log("Collection Set!")
     }
 
     start_closer(){
@@ -118,17 +103,26 @@ class Mongo_Instance{
 
     insert_document(arr_obj, collection_name){
         // Inserts an array of objects (documents) into a given collection (table)
-        arr_obj = [{ name: "Company Inc", address: "Highway 37" }]
+        // arr_obj = [{ name: "Company Inc", address: "Highway 37" }]
         !Array.isArray( arr_obj ) && ( arr_obj = [arr_obj] );
-        //console.log("ARR: ", arr_obj)
+        // console.log("ARR: ", arr_obj)
         if(this.current_collection_obj && arr_obj.length>0){
-            //console.log("FUCK...")
+            console.log("FUCK...")
             this.current_collection_obj.insertMany(arr_obj, (err, res) => {
                 if(err) throw err
                 console.log("Number of documents inserted: ", res.insertedCount);
+                return true
             } );
         }
+        else console.log("Collection obj: ", this.current_collection_obj )
         return false // Not really needed, but whatever.
+    }
+
+    seed_doc(path){
+        console.log("Seeding: ", path)
+        const data = fs.readFileSync( path );
+        const docs = JSON.parse(data.toString());
+        this.insert_document( docs )
     }
 
     select_document( {json_query={}, projection={}, qty=10, callBack=this.display}=arguments ){
@@ -158,7 +152,6 @@ class Mongo_Instance{
         this.current_collection_obj.drop( callBack );
     }
     close(){
-        console.log("CLOSING DB", this.processes)
         if(this.processes <= 0){
             this.current_db_obj.close();
             this.current_db_obj = null;
@@ -176,21 +169,6 @@ class Mongo_Instance{
         console.log("Parameters c: ", c);
         // console.log("Caller: ", arguments.callee.caller );    // Can not use in strict mode
         await function(){setTimeout( console.trace, 5000)}
-    }
-
-    test_methods (){
-        this.run ("set_collection", "table1");
-        this.run("mk_collection", "table1")
-        // this.run("drop_collection")
-        this.run( "print_all" )
-        // this.run( "print_all" );
-        this.run("insert_document", myobj)
-        this.run("select_document", json_query={name:"John"}, projection={_id:0})
-        // this.run("print_all")
-        this.run("debug", {a:1,b:2,c:3,d:4})
-        this.run("count_documents")
-        //this.run("select_document", json_query={name:"John"}, projection={_id:0})
-        setTimeout( this.run.bind(this, "close"), 1200 )
     }
 
     export_json(raw_json, path="./MongoDB_Seed2.json"){
@@ -226,31 +204,9 @@ class Mongo_Instance{
 
 }
 
-
-
-// For debugging purpose
-var myobj = [
-    { name: 'John', address: 'Highway 71'},
-    { name: 'Peter', address: 'Lowstreet 4'},
-    { name: 'Amy', address: 'Apple st 652'},
-    { name: 'Hannah', address: 'Mountain 21'},
-    { name: 'Michael', address: 'Valley 345'},
-    { name: 'Sandy', address: 'Ocean blvd 2'},
-    { name: 'Betty', address: 'Green Grass 1'},
-    { name: 'Richard', address: 'Sky st 331'},
-    { name: 'Susan', address: 'One way 98'},
-    { name: 'Vicky', address: 'Yellow Garden 2'},
-    { name: 'Ben', address: 'Park Lane 38'},
-    { name: 'William', address: 'Central st 954'},
-    { name: 'Chuck', address: 'Main Road 989'},
-    { name: 'Viola', address: 'Sideway 1633'}
-];
-
-
-
-
 // const inst = new Mongo_Instance()
 async function test_methods (){
+    // Keeping this for examples
     // inst.run("debug", {a:1,b:2,c:3,d:4})
     inst.run ("set_collection", "table1");
     // await inst.run("drop_collection")
@@ -274,4 +230,7 @@ async function test_methods (){
     // console.log("CURSOR 2: ", inst.current_collection_obj.find({}).count )
 }
 
-const inst = new Mongo_Instance()
+// const inst = new Mongo_Instance()
+
+
+module.exports = Mongo_Instance
