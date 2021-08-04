@@ -6,6 +6,7 @@ import CohortBar from './AdminPage/CohortBar';
 import CohortProfile from './AdminPage/CohortProfile';
 import StudentProfile from './AdminPage/StudentProfile';
 import StudentQuestionnaire from "./StudentQuestionnaire";
+import SignOn from "./SSO";
 
 export default class App extends Component {
   constructor(props) {
@@ -14,7 +15,8 @@ export default class App extends Component {
     this.state = {
       selected_student: 0, // ID of student selected
       selected_cohort: '', // name of the cohort selected
-      current_page: 'Admin-Home'    
+      current_page: 'Admin-Home',
+      verified: false
     };
 
     this.change_cohort = this.change_cohort.bind(this);
@@ -40,97 +42,33 @@ export default class App extends Component {
 
   render() {
     let cohortList = [{name: 'MCSP-07'},{name: 'MCSP-08'},{name: 'MCSP-09'},{name: 'MCSP-10'},{name: 'MCSP-11'}]
-    let studentList = 
-    [
-      {
-      firstName: 'Tony',
-      lastName: 'Robbins',
-      cohort: 'MCSP-07',
-      email: 'tonyrobbins@gmail.com',
-      gender: 'male',
-      terminalLeave: 'Aug 6',
-      etsDate: 'August 20, 2021',
-      etsCountDown: '20 days',
-      phoneNumber: '523-423-2551',
-      maritalStatus: 'Single',
-      deliverables: ['Complete capstone', 'CIF', 'Clear barracks'],
-      completedTasks: ['SFL TAP courses'],
-      currentPhase: 1,
-      selfieURL: 'https://i.pinimg.com/originals/35/5b/f7/355bf7c6116d655b605cbecf568223cc.jpg'
-    },
-    {
-      firstName: 'Johnny',
-      lastName: 'Cash',
-      cohort: 'MCSP-07',
-      email: 'cash@gmail.com',
-      gender: 'male',
-      terminalLeave: 'Aug 6',
-      etsDate: 'August 20, 2021',
-      etsCountDown: '20 days',
-      phoneNumber: '523-423-2551',
-      maritalStatus: 'Single',
-      deliverables: ['Complete capstone', 'CIF', 'Clear barracks'],
-      completedTasks: ['SFL TAP courses'],
-      currentPhase: 1,
-      selfieURL: 'https://i.pinimg.com/originals/35/5b/f7/355bf7c6116d655b605cbecf568223cc.jpg'
-    },
-    {
-      firstName: 'Shawn',
-      lastName: 'West',
-      cohort: 'MCSP-07',
-      email: 'cash@gmail.com',
-      gender: 'male',
-      terminalLeave: 'Aug 6',
-      etsDate: 'August 20, 2021',
-      etsCountDown: '20 days',
-      phoneNumber: '523-423-2551',
-      maritalStatus: 'Single',
-      deliverables: ['Complete capstone', 'CIF', 'Clear barracks'],
-      completedTasks: ['SFL TAP courses'],
-      currentPhase: 1,
-      selfieURL: 'https://i.pinimg.com/originals/35/5b/f7/355bf7c6116d655b605cbecf568223cc.jpg'
-    },
-    {
-      firstName: 'Suzie',
-      lastName: 'Q',
-      cohort: 'MCSP-07',
-      email: 'Suzie@hotmail.com',
-      gender: 'male',
-      terminalLeave: 'Aug 6',
-      etsDate: 'August 20, 2021',
-      etsCountDown: '20 days',
-      phoneNumber: '523-423-2551',
-      maritalStatus: 'Single',
-      deliverables: ['Complete capstone', 'CIF', 'Clear barracks'],
-      completedTasks: ['SFL TAP courses'],
-      currentPhase: 1,
-      selfieURL: 'https://i.pinimg.com/originals/35/5b/f7/355bf7c6116d655b605cbecf568223cc.jpg'
+    let studentList = require('./studentList')
+    if (this.state.verified) {
+      return (
+        <div className={"wrapper"}>
+          <CohortBar
+          change_page={()=>{this.change_page("Admin-Cohort-Profile")}}
+          cohortList={cohortList}
+          change_cohort={this.change_cohort}
+          />
+          <section className={'main-content'}>
+              <Banner />
+              {this.state.current_page === 'Admin-Home' && <Splash />}
+              {this.state.current_page === 'Admin-Student-Profile' && 
+              <StudentProfile studentID={ this.state.selected_student } />}
+              {this.state.current_page === 'Admin-Cohort-Profile' && 
+              <CohortProfile 
+              cohortList={cohortList}
+              selected_cohort={this.state.selected_cohort}
+              />}
+              {this.state.current_page === 'Admin-Student-Questionnaire' && <StudentQuestionnaire />}
+              <Footer  change_page={()=>{this.change_page('Admin-Student-Questionnaire')}}/>
+          </section>
+        </div>
+      )
+    } else {
+      return <SignOn/>;
     }
-  ];
 
-    return (
-      <div className={"wrapper"}>
-        <CohortBar 
-        change_page={()=>{this.change_page("Admin-Cohort-Profile")}}
-        cohortList={cohortList}
-        change_cohort={this.change_cohort}
-        />
-        <section className={'main-content'}>
-          
-            <Banner />
-            {this.state.current_page === 'Admin-Home' && <Splash />}
-            {this.state.current_page === 'Admin-Student-Profile' && 
-            <StudentProfile studentID={ this.state.selected_student } />}
-            {this.state.current_page === 'Admin-Cohort-Profile' && 
-            <CohortProfile 
-            cohortList={cohortList}
-            selected_cohort={this.state.selected_cohort}
-            />}
-            {this.state.current_page === 'Admin-Student-Questionnaire' && <StudentQuestionnaire />}
-            <Footer  change_page={()=>{this.change_page('Admin-Student-Questionnaire')}}/>
-            
-        </section>
-      </div>
-    )
-  }
+    }
 }
