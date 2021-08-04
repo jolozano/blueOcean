@@ -10,13 +10,12 @@ export default class SignOn extends Component {
         super();
         this.state = {
         }
-        // this.handleLogin = this.handleLogin.bind(this)
+        this.handleLogin = this.handleLogin.bind(this)
     };
-    
+    handleLogin = (response) => {
+        return console.log('response', response)
+    }
     render() {
-        const handleLogin = (response) => {
-            return console.log(response)
-        }
         console.log(process.env.REACT_APP_GOOGLE_CLIENT_ID)
         console.log('render');
        return (
@@ -24,8 +23,8 @@ export default class SignOn extends Component {
             <GoogleLogin
                 clientId={"854591671315-j148rl3knd8t3j4tig9p3qhdpht4da91.apps.googleusercontent.com"}
                 buttonText="Log in with Google"
-                onSuccess={handleLogin}
-                onFailure={handleLogin}
+                onSuccess={this.handleLogin}
+                onFailure={this.handleLogin}
                 cookiePolicy={'single_host_origin'}
             />
         </div>
