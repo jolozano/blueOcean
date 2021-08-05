@@ -18,7 +18,7 @@ export default class App extends Component {
       current_page: 'Admin-Home',
       verified: false
     };
-
+    this.verifyUser = this.verifyUser.bind(this)
     this.change_cohort = this.change_cohort.bind(this);
   }
 
@@ -38,6 +38,9 @@ export default class App extends Component {
     this.setState({current_page:page})
   }
 
+  verifyUser() {
+    this.setState({verified: !this.state.verified})
+  }
 
 
   render() {
@@ -52,7 +55,7 @@ export default class App extends Component {
           change_cohort={this.change_cohort}
           />
           <section className={'main-content'}>
-              <Banner />
+              <Banner callBack={this.verifyUser}/>
               {this.state.current_page === 'Admin-Home' && <Splash />}
               {this.state.current_page === 'Admin-Student-Profile' && 
               <StudentProfile studentID={ this.state.selected_student } />}
@@ -67,7 +70,7 @@ export default class App extends Component {
         </div>
       )
     } else {
-      return <SignOn/>;
+      return <SignOn callBack={this.verifyUser}/>;
     }
 
     }
