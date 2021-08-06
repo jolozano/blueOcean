@@ -68,6 +68,9 @@
 
 ## Install
 
+  * Create authorization credentials
+  * Update .env file with your Client ID provided to you when creating your application credentials. Go to [Google Log-In Docs](https://developers.google.com/identity/sign-in/web/sign-in) for a set up guide.
+
 ---------------------------------------------------
 
 ## Lessons Learned
