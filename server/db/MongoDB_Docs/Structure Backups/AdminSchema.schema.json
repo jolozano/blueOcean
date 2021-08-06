@@ -1,0 +1,51 @@
+{
+  "id": 332535,
+  "num_rows": 10,
+  "file_format": "json",
+  "name": "AdminSchema",
+  "array": true,
+  "columns": [
+    {
+      "name": "id",
+      "null_percentage": 0,
+      "type": "Email Address",
+      "formula": null
+    },
+    {
+      "name": "credentials.username",
+      "null_percentage": 0,
+      "type": "Username",
+      "formula": null
+    },
+    {
+      "name": "credentials.password",
+      "null_percentage": 0,
+      "type": "MD5",
+      "formula": null
+    },
+    {
+      "name": "pii.first_name",
+      "null_percentage": 0,
+      "type": "First Name",
+      "formula": null
+    },
+    {
+      "name": "pii.last_name",
+      "null_percentage": 0,
+      "type": "Last Name",
+      "formula": null
+    },
+    {
+      "name": "pii.email",
+      "null_percentage": 0,
+      "type": "Email Address",
+      "formula": null
+    },
+    {
+      "name": "students[8]",
+      "null_percentage": 0,
+      "type": "Email Address",
+      "formula": ""
+    }
+  ]
+}
