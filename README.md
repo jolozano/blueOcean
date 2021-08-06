@@ -4,7 +4,12 @@
 
 ## Contributors: [Jose Lozano](https://github.com/jolozano), [Chris Nguyen](https://github.com/ComplexChris), [Charles Brixey](https://github.com/Brixsta), [Cristian Perez](https://github.com/Perezc1143)
 
-***Full Stack Collaborative Project that will allow adminstrators to have visibility on students transition from the miltary to civilian life and give students a road map to transition succesfully out of the military.***
+***This Full Stack Collaborative Project was a brief 4-week sprint where our team tried to complete an MVP for an external user. The application gives adminstrators visibility on student transitions from miltary to civilian life. The Transition Tracker gives students a road map to transition succesfully out of the military.***
+
+---------------------------------------------------
+
+## Tech Stack
+![img mongodb](https://github.com/mongodb/mongo/blob/master/docs/leaf.svg)
 
 ---------------------------------------------------
 
