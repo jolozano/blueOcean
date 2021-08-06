@@ -2,7 +2,7 @@
 
 <img src='./billMurray.jpeg'>
 
-## Contributors: [Jose Lozano](https://github.com/jolozano)
+## Contributors: [Jose Lozano](https://github.com/jolozano), [Chris Nguyen](https://github.com/ComplexChris), [Charles Brixey](https://github.com/Brixsta), [Cristian Perez](https://github.com/Perezc1143)
 
 ***Full Stack Collaborative Project that will allow adminstrators to have visibility on students transition from the miltary to civilian life and give students a road map to transition succesfully out of the military.***
 
