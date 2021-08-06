@@ -511,3 +511,22 @@ h1 {
     opacity: 1;
   }
 }
+/* Jose's Styles */
+.SSO {
+  margin-top: 25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.title1SSO{
+  padding: 1rem;
+}
+.title2SSO{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+/* Jose's Styles */
