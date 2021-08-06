@@ -23,24 +23,24 @@
 
 ---------------------------------------------------
 
-## Project Workflow and Expectations
+## Project Workflow and Requirements
 
-#### **The team must collaborate on project ideas and discuss efficient workflow methods.**
-  - [ ] Utilize a collaborative platform for idea/work managment.
-    - [ ] Platform must allow all team members to contribute/view ideas
-    - [ ] Platform should allow users to add details to workflow.
-  - [ ] Operate within GitHub.
-    - [ ] Initilize a repository.
-    - [ ] Each team member must have access to the repo.
-    - [ ] Each team member should utilize seperate branches.
+#### **The team collaborated on project ideas and discussed efficient workflow methods.**
+  * Utilized a collaborative platform for idea/work managment
+    * Platform must allowed all team members to contribute/view ideas
+    * Platform should allowd users to add details to workflow
+  * Operated within GitHub
+    * Initilized a repository
+    * Each team member had access to the repo
+    * Each team member utilized seperate branches
 
-#### **Each team member will work within their respective branch.**
-  - [ ] Components and Services
-    - [ ] Should have it's own directory.
-    - [ ] Should be commited in team members branch frequently.
-    - [ ] Components should function correctly by itself.
-      - [ ] Components must not be a full fledge app; keep it simple.
-    * Service must allow other services to access it's component
+#### **Each team member worked within their respective branch.**
+  * Components and Services
+    * Had it's own directory
+    * Commited in team members branch frequently.
+    * Components functioned correctly by themselves.
+      * Components were not a full-fledge app
+    * Service allowed other services to access it's component
 
 ---------------------------------------------------
 
