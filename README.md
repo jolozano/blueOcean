@@ -30,8 +30,8 @@
 
 #### **The team collaborated on project ideas and discussed efficient workflow methods.**
   * Utilized a collaborative platform for idea/work managment
-    * Platform must allowed all team members to contribute/view ideas
-    * Platform should allowd users to add details to workflow
+    * Platform allowed all team members to contribute/view ideas
+    * Platform allowed users to add details to workflow
   * Operated within GitHub
     * Initilized a repository
     * Each team member had access to the repo
@@ -39,11 +39,11 @@
 
 #### **Each team member worked within their respective branch.**
   * Components and Services
-    * Had it's own directory
-    * Commited in team members branch frequently.
+    * Had their own directory
+    * Commited to team members branch frequently.
     * Components functioned correctly by themselves.
       * Components were not a full-fledge app
-    * Service allowed other services to access it's component
+    * Service allowed other services to access functionality
 
 ---------------------------------------------------
 
