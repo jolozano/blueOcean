@@ -1,4 +1,5 @@
-# Blue Ocean
+# Transition Tracker: No need to have a traker for all your other trackers. Successfully navigate your post service career in one web app.
+
 
 ***Full Stack Collaborative Project that will allow adminstrators to have visibility on students transition from the miltary to civilian life and give students a road map to transition succesfully out of the military.***
 
