@@ -12,6 +12,13 @@
 
 ![img mern](https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/MERN-logo.png/320px-MERN-logo.png)
 
+[MongoDB](https://github.com/mongodb/mongo)
+
+[Express](https://github.com/expressjs/express)
+
+[React](https://github.com/facebook/react)
+
+[Node](https://github.com/nodejs/node)
 ---------------------------------------------------
 
 ## **The team must collaborate on project ideas and discuss efficient workflow methods.**
