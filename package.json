@@ -23,6 +23,8 @@
     "@fortawesome/fontawesome-free-solid": "^5.0.13",
     "@fortawesome/fontawesome-svg-core": "^1.2.35",
     "@fortawesome/react-fontawesome": "^0.1.14",
+    "dotenv": "^10.0.0",
+    "env": "^0.0.2",
     "express": "^4.17.1",
     "faker": "^5.5.3",
     "font-awesome": "^4.7.0",
@@ -32,6 +34,7 @@
     "pg": "^8.6.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-file-reader": "^1.1.4"
+    "react-file-reader": "^1.1.4",
+    "react-google-login": "^5.2.2"
   }
 }
