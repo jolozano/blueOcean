@@ -4,7 +4,7 @@
 <img src='./billMurray.jpeg'>
 
 ## Contributors 
-#### [Jose Lozano](https://github.com/jolozano), [Chris Nguyen](https://github.com/ComplexChris), [Charles Brixey](https://github.com/Brixsta), [Cristian Perez](https://github.com/Perezc1143)
+#### [Jose Lozano](https://github.com/jolozano), [Chris Nguyen](https://github.com/ComplexChris), [Charles Brixey](https://github.com/Brixsta), and [Cristian Perez](https://github.com/Perezc1143)
 
 ---------------------------------------------------
 
