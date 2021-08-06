@@ -19,6 +19,7 @@
 [React](https://github.com/facebook/react)
 
 [Node](https://github.com/nodejs/node)
+
 ---------------------------------------------------
 
 ## **The team must collaborate on project ideas and discuss efficient workflow methods.**
