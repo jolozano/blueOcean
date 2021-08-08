@@ -15,7 +15,7 @@ class Banner extends Component {
         return (
             <header className={"banner"}>
                 <h1 className={"banner-title"}>Transition Tracker App</h1>
-                <div>
+                <div className={'logout-button-container'}>
                     <GoogleLogout
                         clientId="854591671315-j148rl3knd8t3j4tig9p3qhdpht4da91.apps.googleusercontent.com"
                         buttonText="Logout"
