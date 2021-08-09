@@ -1,10 +1,222 @@
-[{"_id":"apleavin0@wordpress.org","credentials":{"username":"apleavin0","password":"177baa58b2157b6f984f8937b572f7c3"},"pii":{"first_name":"Adoree","last_name":"Pleavin","email":"apleavin0@slate.com"},"students":["apleavin0@over-blog.com","apleavin0@ameblo.jp","apleavin0@goodreads.com","apleavin0@gov.uk","apleavin0@kickstarter.com","apleavin0@mozilla.org","apleavin0@merriam-webster.com","apleavin0@w3.org"]},
-{"_id":"mpobjay1@google.com.br","credentials":{"username":"mpobjay1","password":"dff87188553936828f89689f2e82f16f"},"pii":{"first_name":"Malynda","last_name":"Pobjay","email":"mpobjay1@mapy.cz"},"students":["mpobjay1@yellowbook.com","mpobjay1@xrea.com","mpobjay1@mysql.com","mpobjay1@ftc.gov","mpobjay1@psu.edu","mpobjay1@51.la","mpobjay1@i2i.jp","mpobjay1@netvibes.com"]},
-{"_id":"btomowicz2@ow.ly","credentials":{"username":"btomowicz2","password":"97ea62ddf9c33273de0a799bc8010da4"},"pii":{"first_name":"Brett","last_name":"Tomowicz","email":"btomowicz2@ustream.tv"},"students":["btomowicz2@nydailynews.com","btomowicz2@globo.com","btomowicz2@geocities.jp","btomowicz2@skyrock.com","btomowicz2@ca.gov","btomowicz2@sfgate.com","btomowicz2@qq.com","btomowicz2@slideshare.net"]},
-{"_id":"ghanscome3@reuters.com","credentials":{"username":"ghanscome3","password":"c1ee18632b604c5f9da7b07944155c46"},"pii":{"first_name":"Georges","last_name":"Hanscome","email":"ghanscome3@reuters.com"},"students":["ghanscome3@blogger.com","ghanscome3@webnode.com","ghanscome3@drupal.org","ghanscome3@sina.com.cn","ghanscome3@ftc.gov","ghanscome3@blogtalkradio.com","ghanscome3@uol.com.br","ghanscome3@mozilla.com"]},
-{"_id":"rjeram4@guardian.co.uk","credentials":{"username":"rjeram4","password":"d93ca00588374bece7572af838758d69"},"pii":{"first_name":"Roldan","last_name":"Jeram","email":"rjeram4@bluehost.com"},"students":["rjeram4@ycombinator.com","rjeram4@google.co.jp","rjeram4@goodreads.com","rjeram4@usatoday.com","rjeram4@biglobe.ne.jp","rjeram4@exblog.jp","rjeram4@bing.com","rjeram4@umich.edu"]},
-{"_id":"lbucher5@shop-pro.jp","credentials":{"username":"lbucher5","password":"cbb081440644b578f29524b845d7f69a"},"pii":{"first_name":"Liesa","last_name":"Bucher","email":"lbucher5@list-manage.com"},"students":["lbucher5@vk.com","lbucher5@hubpages.com","lbucher5@auda.org.au","lbucher5@lycos.com","lbucher5@va.gov","lbucher5@accuweather.com","lbucher5@mlb.com","lbucher5@bloglovin.com"]},
-{"_id":"bgovini6@smugmug.com","credentials":{"username":"bgovini6","password":"9faefafcebae30b937fd4cce46c2c2dd"},"pii":{"first_name":"Bernarr","last_name":"Govini","email":"bgovini6@delicious.com"},"students":["bgovini6@a8.net","bgovini6@paypal.com","bgovini6@princeton.edu","bgovini6@zimbio.com","bgovini6@umn.edu","bgovini6@nasa.gov","bgovini6@mysql.com","bgovini6@elegantthemes.com"]},
-{"_id":"lgoldsbrough7@rambler.ru","credentials":{"username":"lgoldsbrough7","password":"b411d9a5975ae1243d572686ba85f8f8"},"pii":{"first_name":"Lina","last_name":"Goldsbrough","email":"lgoldsbrough7@sina.com.cn"},"students":["lgoldsbrough7@census.gov","lgoldsbrough7@umich.edu","lgoldsbrough7@washington.edu","lgoldsbrough7@salon.com","lgoldsbrough7@uiuc.edu","lgoldsbrough7@cornell.edu","lgoldsbrough7@sogou.com","lgoldsbrough7@trellian.com"]},
-{"_id":"cbuckthorp8@uiuc.edu","credentials":{"username":"cbuckthorp8","password":"69d50d8db3a4eee53325ff33cfe6b6d1"},"pii":{"first_name":"Carol","last_name":"Buckthorp","email":"cbuckthorp8@mayoclinic.com"},"students":["cbuckthorp8@spotify.com","cbuckthorp8@harvard.edu","cbuckthorp8@discovery.com","cbuckthorp8@bloglovin.com","cbuckthorp8@princeton.edu","cbuckthorp8@mozilla.org","cbuckthorp8@dailymotion.com","cbuckthorp8@fda.gov"]},
-{"_id":"gdivisek9@zimbio.com","credentials":{"username":"gdivisek9","password":"e5076cacd9bd129f4595eb59754b1f44"},"pii":{"first_name":"Glori","last_name":"Divisek","email":"gdivisek9@infoseek.co.jp"},"students":["gdivisek9@princeton.edu","gdivisek9@bbc.co.uk","gdivisek9@360.cn","gdivisek9@narod.ru","gdivisek9@cargocollective.com","gdivisek9@nyu.edu","gdivisek9@youtube.com","gdivisek9@stumbleupon.com"]}]
+[
+    {
+        "_id": "apleavin0@wordpress.org",
+        "credentials": {
+            "username": "apleavin0",
+            "password": "177baa58b2157b6f984f8937b572f7c3"
+        },
+        "pii": {
+            "first_name": "Adoree",
+            "last_name": "Pleavin",
+            "email": "apleavin0@slate.com"
+        },
+        "students": [
+            "apleavin0@over-blog.com",
+            "apleavin0@ameblo.jp",
+            "apleavin0@goodreads.com",
+            "apleavin0@gov.uk",
+            "apleavin0@kickstarter.com",
+            "apleavin0@mozilla.org",
+            "apleavin0@merriam-webster.com",
+            "apleavin0@w3.org"
+        ]
+    },
+    {
+        "_id": "mpobjay1@google.com.br",
+        "credentials": {
+            "username": "mpobjay1",
+            "password": "dff87188553936828f89689f2e82f16f"
+        },
+        "pii": {
+            "first_name": "Malynda",
+            "last_name": "Pobjay",
+            "email": "mpobjay1@mapy.cz"
+        },
+        "students": [
+            "mpobjay1@yellowbook.com",
+            "mpobjay1@xrea.com",
+            "mpobjay1@mysql.com",
+            "mpobjay1@ftc.gov",
+            "mpobjay1@psu.edu",
+            "mpobjay1@51.la",
+            "mpobjay1@i2i.jp",
+            "mpobjay1@netvibes.com"
+        ]
+    },
+    {
+        "_id": "btomowicz2@ow.ly",
+        "credentials": {
+            "username": "btomowicz2",
+            "password": "97ea62ddf9c33273de0a799bc8010da4"
+        },
+        "pii": {
+            "first_name": "Brett",
+            "last_name": "Tomowicz",
+            "email": "btomowicz2@ustream.tv"
+        },
+        "students": [
+            "btomowicz2@nydailynews.com",
+            "btomowicz2@globo.com",
+            "btomowicz2@geocities.jp",
+            "btomowicz2@skyrock.com",
+            "btomowicz2@ca.gov",
+            "btomowicz2@sfgate.com",
+            "btomowicz2@qq.com",
+            "btomowicz2@slideshare.net"
+        ]
+    },
+    {
+        "_id": "ghanscome3@reuters.com",
+        "credentials": {
+            "username": "ghanscome3",
+            "password": "c1ee18632b604c5f9da7b07944155c46"
+        },
+        "pii": {
+            "first_name": "Georges",
+            "last_name": "Hanscome",
+            "email": "ghanscome3@reuters.com"
+        },
+        "students": [
+            "ghanscome3@blogger.com",
+            "ghanscome3@webnode.com",
+            "ghanscome3@drupal.org",
+            "ghanscome3@sina.com.cn",
+            "ghanscome3@ftc.gov",
+            "ghanscome3@blogtalkradio.com",
+            "ghanscome3@uol.com.br",
+            "ghanscome3@mozilla.com"
+        ]
+    },
+    {
+        "_id": "rjeram4@guardian.co.uk",
+        "credentials": {
+            "username": "rjeram4",
+            "password": "d93ca00588374bece7572af838758d69"
+        },
+        "pii": {
+            "first_name": "Roldan",
+            "last_name": "Jeram",
+            "email": "rjeram4@bluehost.com"
+        },
+        "students": [
+            "rjeram4@ycombinator.com",
+            "rjeram4@google.co.jp",
+            "rjeram4@goodreads.com",
+            "rjeram4@usatoday.com",
+            "rjeram4@biglobe.ne.jp",
+            "rjeram4@exblog.jp",
+            "rjeram4@bing.com",
+            "rjeram4@umich.edu"
+        ]
+    },
+    {
+        "_id": "lbucher5@shop-pro.jp",
+        "credentials": {
+            "username": "lbucher5",
+            "password": "cbb081440644b578f29524b845d7f69a"
+        },
+        "pii": {
+            "first_name": "Liesa",
+            "last_name": "Bucher",
+            "email": "lbucher5@list-manage.com"
+        },
+        "students": [
+            "lbucher5@vk.com",
+            "lbucher5@hubpages.com",
+            "lbucher5@auda.org.au",
+            "lbucher5@lycos.com",
+            "lbucher5@va.gov",
+            "lbucher5@accuweather.com",
+            "lbucher5@mlb.com",
+            "lbucher5@bloglovin.com"
+        ]
+    },
+    {
+        "_id": "bgovini6@smugmug.com",
+        "credentials": {
+            "username": "bgovini6",
+            "password": "9faefafcebae30b937fd4cce46c2c2dd"
+        },
+        "pii": {
+            "first_name": "Bernarr",
+            "last_name": "Govini",
+            "email": "bgovini6@delicious.com"
+        },
+        "students": [
+            "bgovini6@a8.net",
+            "bgovini6@paypal.com",
+            "bgovini6@princeton.edu",
+            "bgovini6@zimbio.com",
+            "bgovini6@umn.edu",
+            "bgovini6@nasa.gov",
+            "bgovini6@mysql.com",
+            "bgovini6@elegantthemes.com"
+        ]
+    },
+    {
+        "_id": "lgoldsbrough7@rambler.ru",
+        "credentials": {
+            "username": "lgoldsbrough7",
+            "password": "b411d9a5975ae1243d572686ba85f8f8"
+        },
+        "pii": {
+            "first_name": "Lina",
+            "last_name": "Goldsbrough",
+            "email": "lgoldsbrough7@sina.com.cn"
+        },
+        "students": [
+            "lgoldsbrough7@census.gov",
+            "lgoldsbrough7@umich.edu",
+            "lgoldsbrough7@washington.edu",
+            "lgoldsbrough7@salon.com",
+            "lgoldsbrough7@uiuc.edu",
+            "lgoldsbrough7@cornell.edu",
+            "lgoldsbrough7@sogou.com",
+            "lgoldsbrough7@trellian.com"
+        ]
+    },
+    {
+        "_id": "cbuckthorp8@uiuc.edu",
+        "credentials": {
+            "username": "cbuckthorp8",
+            "password": "69d50d8db3a4eee53325ff33cfe6b6d1"
+        },
+        "pii": {
+            "first_name": "Carol",
+            "last_name": "Buckthorp",
+            "email": "cbuckthorp8@mayoclinic.com"
+        },
+        "students": [
+            "cbuckthorp8@spotify.com",
+            "cbuckthorp8@harvard.edu",
+            "cbuckthorp8@discovery.com",
+            "cbuckthorp8@bloglovin.com",
+            "cbuckthorp8@princeton.edu",
+            "cbuckthorp8@mozilla.org",
+            "cbuckthorp8@dailymotion.com",
+            "cbuckthorp8@fda.gov"
+        ]
+    },
+    {
+        "_id": "gdivisek9@zimbio.com",
+        "credentials": {
+            "username": "gdivisek9",
+            "password": "e5076cacd9bd129f4595eb59754b1f44"
+        },
+        "pii": {
+            "first_name": "Glori",
+            "last_name": "Divisek",
+            "email": "gdivisek9@infoseek.co.jp"
+        },
+        "students": [
+            "gdivisek9@princeton.edu",
+            "gdivisek9@bbc.co.uk",
+            "gdivisek9@360.cn",
+            "gdivisek9@narod.ru",
+            "gdivisek9@cargocollective.com",
+            "gdivisek9@nyu.edu",
+            "gdivisek9@youtube.com",
+            "gdivisek9@stumbleupon.com"
+        ]
+    }
+]

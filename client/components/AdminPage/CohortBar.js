@@ -44,13 +44,15 @@ class CohortBar extends React.Component {
             <div className={"cohort-bar-title-box"}>
                 <h1 className={"cohort-bar-title"}>Current Cohorts:</h1>
                 <ul className={"cohort-bar-list"}>
-                    {this.props.cohortList.map((item)=>{
+                    {this.props.cohortList.map((item, index)=>{
                         return (
-                            <li key={item.id} 
+                            <li key={`Cohort-${item.name}-${index}`}
                             className={"cohort-bar-list-item"}
+                            id={item.num}
                             onClick={(e)=>{
+                                this.props.change_cohort(e.target.textContent, e.target.id);
                                 this.props.change_page('Admin-Cohort-Profile');
-                                this.props.change_cohort(e.target.textContent);
+                                e.preventDefault();
                                 }}>
                                 {item.name}
                             </li>

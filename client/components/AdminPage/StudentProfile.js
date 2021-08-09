@@ -5,23 +5,36 @@ class StudentProfile extends React.Component {
     constructor (props) {
         super()
         this.state = {
-            selected_student: 10    // ID of student selected
+            selected_student: 10,    // ID of student selected
+            pii: {
+                "first_name": "Etienne",
+                "last_name": "Valance",
+                "email": "evalance0@wikispaces.com",
+                "gender": "Genderfluid",
+                "ets_date": "10/13/2020",
+                "current_unit": "5 Blue Bill Park Place",
+                "phone_number": "928-698-5462",
+                "marital_staus": "Lone Wolf",
+                "terminal_date": "3/26/2021",
+                "student_img": "http://dummyimage.com/174x100.png/5fa2dd/ffffff",
+                ...props.single_student
+            },
         }
     }
 
     render () {
-        let mockData = this.props.mockData;
+        let studentData = this.state.pii;
         return (
             <div className={"student-profile"}>
                 <table className={"student-profile-table"}>
                     <tbody>
-                        <tr>    
+                        <tr>
                             <td>First Name:</td>
                             <td>Last Name:</td>
                         </tr>
                         <tr>
-                            <td>John</td>
-                            <td>Wayne</td>
+                            <td>{studentData.first_name}</td>
+                            <td>{studentData.last_name}</td>
                         </tr>
                         <tr>
                             <td>Cohort:</td>
@@ -29,33 +42,31 @@ class StudentProfile extends React.Component {
                         </tr>
                         <tr>
                             <td>MCSP-07</td>
-                            <td>JohnWayne@gmail.com</td>
+                            <td>{studentData.email}</td>
                         </tr>
                         <tr>
                             <td>Gender</td>
                             <td>Terminal Leave</td>
                         </tr>
                         <tr>
-                            <td>Male</td>
-                            <td>August 1</td>
+                            <td>{studentData.gender}</td>
+                            <td>{studentData.terminal_date}</td>
                         </tr>
                         <tr>
                             <td>ETS Date:</td>
                             <td>ETS Countdown:</td>
                         </tr>
                         <tr>
-                            <td>August 13th, 2021</td>
+                            <td>{studentData.ets_date}</td>
                             <td>20 Days</td>
                         </tr>
                         <tr>
                             <td>Phone Number:</td>
-                            <td>
-                                Marital Status:
-                            </td>
+                            <td>Marital Status:</td>
                         </tr>
                         <tr>
-                            <td>503-423-3212</td>
-                            <td>Single</td>
+                            <td>{studentData.phone_number}</td>
+                            <td>{studentData.marital_staus}</td>
                         </tr>
                         <tr>
                             <td>Deliverables</td>
@@ -77,7 +88,7 @@ class StudentProfile extends React.Component {
                     </tbody>
                     </table>
                     <div className={"student-profile-img-canvas"}>
-                        <img className={"student-profile-img"} src={'https://cdn.britannica.com/82/136182-050-6BB308B7/John-Wayne.jpg'} width="80%" height="75%"></img>
+                        <img className={"student-profile-img"} src={studentData.student_img} width="80%" height="75%"></img>
                     </div>
             </div>
         )

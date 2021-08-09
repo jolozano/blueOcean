@@ -13,7 +13,6 @@ const collections = { students: null, admins: null, deliverables: null }
 // const student_collection = db.current_collection_obj.collection( '' )
 
 function callBack( client_res, db_err, db_res){
-  console.log("CLIENT: ", client_res)
   if (db_err) {
     client_res.status(404).send(db_err);
   } else {
@@ -24,12 +23,43 @@ function callBack( client_res, db_err, db_res){
 const all_collections = ["students", "admins", "default", "bases"]
 
 function server(){  const app = express();
+  this._Parameters = {
+    collection_name:'students',
+    json_query:{ cohort_id: 1 },
+    projection:{pii:1, tasks:1},
+    // projection:{_id:1},
+    qty:10,
+    callBack:(...para)=>console.log("Default callback: ", para)
+  }
 
   app.use(express.static("public"));
   app.use(express.json());
 
+  app.use("*", (req, res, next)=>{
+    console.log("Middleware detected new path: ", req.path)
+    this._Parameters = { ...this._Parameters, ...req.parameters, ...req.query }
+    this._Parameters.callBack = callBack.bind(this, res)
+    next()
+  })
 
-  app.get('api/get/students', (req, res) => {
+  app.get('/api/get/students/:cohort_id', (req, res) => {
+    // Gets all students in a specified cohort
+    // URL must use Query strings
+    // e.g /api/get/students?type=students&cohort=7
+    console.log("Params: ", req.params)
+    console.log("Query: ", req.query)
+    // this._Parameters = {...this._Parameters, cohort_id:+req.params.cohort_id}
+    this._Parameters.json_query.cohort_id = +req.params.cohort_id
+    console.log("Global Parameters: ", this._Parameters)
+    if( req.params.cohort_id ){
+      db.run("select_document", {...this._Parameters });
+    }
+    else {
+      res.status(403).json({response:"Error, invalid query"});
+    }
+  });
+
+  app.get('api/get/students/OLD', (req, res) => {
     // Gets all students in a specified cohort
     // URL must use Query strings
     // e.g /api/get/students?type=students&cohort=7
@@ -45,6 +75,7 @@ function server(){  const app = express();
       res.status(403).json({response:"Error, invalid query"});
     }
   });
+
 
   app.delete( 'api/delete/collection', (req, res) => {
     // Drops entire collection from database
@@ -64,14 +95,19 @@ function server(){  const app = express();
   app.post("/autoseed", (req, res) => {
     const {path} = req.body
     console.log("Auto Seeding: ", path)
-    db.run("seed_doc", path)
+    db.run("seed_doc", path, "Nguyen")
     res.send("SEEDED")
   });
   app.get("/autoseed", (req, res) => {
-    db.run("seed_doc", './MongoDB_Docs/Admins.json', "admins")
-    db.run("seed_doc", './MongoDB_Docs/Student.json', "students")
+    db.run("seed_doc", './server/db/MongoDB_Docs/Admins.json', "admins")
+    db.run("seed_doc", './server/db/MongoDB_Docs/Students.json', "students")
     res.send("SEEDED")
   });
+
+  app.get('/api/debug', (req, res) => {
+    console.log("Debugging...")
+    res.send(  db.initialized )
+  })
 
   app.listen(5000, () => {
     console.log("listening on Port 5000");

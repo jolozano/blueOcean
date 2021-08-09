@@ -1,9 +1,12 @@
 // https://stackoverflow.com/a/16371856/4447923
 // https://stackoverflow.com/a/34835813/4447923
+// https://askubuntu.com/a/1126592
 /*
 sudo rm /var/lib/mongodb/mongod.lock
 sudo mongod --dbpath /var/lib/mongodb/ --repair
 sudo mongod --dbpath /var/lib/mongodb/ --journal
+
+sudo mongod --fork -f /etc/mongod.conf
 
 lsof -i :25
 ss -tanp | grep 5000
@@ -19,9 +22,9 @@ const fs = require('fs');
 class Mongo_Instance {
     // Connect to a Mongo database
     // DB (Location of host) > DB > Collection (Table) >
-    constructor(db_name = "default", db_uri = "mongodb://localhost:27017", init = true) {
+    constructor(db_name = "default", db_uri = "mongodb://localhost:27017/ASS", init = true) {
         this.current_db_obj = null;
-        this.current_collection_obj = null
+        this.current_collection_name = null
         this.db_name = db_name;
         this.initialized = false;
         this.processes = 0;
@@ -33,9 +36,9 @@ class Mongo_Instance {
     async run(target, ...parameters) {
         // Meta-Programming to create Middleware for Data Validation
         console.log(`Job# ${this.processes} - TESTING MIDDLEWARE: ` + target)
-        const variables = ["current_db_obj", "current_collection_obj", "db_name", "initialized"]     // Mappiing properties to IDs
+        const variables = ["current_db_obj", "current_collection_name", "db_name", "initialized"]     // Mappiing properties to IDs
         const requirements = {
-            "insert_document": [1, 3], "select_document": [1, 3], "count_documents": [1],
+            "insert_document": [3], "select_document": [3], "count_documents": [],
             "close": [0], "mk_collection": [0, 3], "set_collection": [0, 3]
         }    // {method:[ <variables needed> ]}
         // this.initialized = false
@@ -70,20 +73,29 @@ class Mongo_Instance {
         if (err) throw err
         else {
             // Connect to specific database (db_name) and set db_obj
-            this.current_collection_obj = null
+            this.current_collection_name = null
             this.current_db_obj = mongo_service.db(this.db_name);
             this.initialized = true
             // this.current_db_obj.getCollectionNames()
+            // this.show_collections()
         }
     }
 
     set_collection(collection_name, set_default = true) {
         if (set_default) {
-            this.current_collection_obj = this.current_db_obj.collection(collection_name);
+            this.current_collection_name = this.current_db_obj.collection(collection_name);
         } else {
             return this.current_db_obj.collection(collection_name);
         }
         console.log("Collection Set!")
+    }
+
+    show_collections(){
+        this.current_db_obj.listCollections().toArray(function(err, names) {
+            if(!err) {
+                console.log("Collection: ", names)
+            }
+        });
     }
 
     start_closer() {
@@ -110,12 +122,12 @@ class Mongo_Instance {
         this.current_db_obj.drop(name)
     }
 
-    insert_document(arr_obj, collection_name = this.current_collection_obj) {
+    insert_document(arr_obj, collection_name = this.current_collection_name) {
         // Inserts an array of objects (documents) into a given collection (table)
         // arr_obj = [{ name: "Company Inc", address: "Highway 37" }]
         !Array.isArray(arr_obj) && (arr_obj = [arr_obj]);
         // console.log("ARR: ", arr_obj)
-        if (this.current_collection_obj && arr_obj.length > 0) {
+        if (collection_name && arr_obj.length > 0) {
             const collection_inst = this.current_db_obj.collection(collection_name)
             collection_inst.insertMany(arr_obj, (err, res) => {
                 if (err) throw err
@@ -123,7 +135,7 @@ class Mongo_Instance {
                 return true
             });
         }
-        else console.log("Collection obj: ", this.current_collection_obj)
+        else console.log("Collection obj: ", collection_name)
         return false // Not really needed, but whatever.
     }
 
@@ -134,13 +146,17 @@ class Mongo_Instance {
         this.insert_document(docs, collection)
     }
 
-    select_document({ json_query = {}, projection = {}, qty = 10, callBack = this.display, collection_name = this.current_collection_obj } = arguments) {
+    select_document({ json_query = {}, projection = {}, qty = 10, callBack = this.display, collection_name = this.current_collection_name } = arguments) {
         // MySQL/Postgres SELECT equates to FIND in MongoDB
         // FIND returns all occurances, findOne returns only 1
-        if (this.current_collection_obj) {
+        console.log("Projection: ", projection)
+        if (collection_name) {
             const collection_inst = this.current_db_obj.collection(collection_name)
-            const query = collection_inst.find(json_query, projection).limit(qty)
+            const query = collection_inst.find(json_query, {projection} ).limit(qty)
             const parsed = query.toArray(callBack)
+        }
+        else{
+            callBack("Error: Invalid collection argument")
         }
     }
     select_all() {
@@ -157,18 +173,18 @@ class Mongo_Instance {
     }
 
     count_documents(callBack = this.display) {
-        this.current_collection_obj.count().then((count) => console.log(count));
+        this.current_collection_name.count().then((count) => console.log(count));
     }
 
     drop_collection(callBack = this.display) {
-        this.current_collection_obj.drop(callBack);
+        this.current_collection_name.drop(callBack);
     }
     close() {
         if (this.processes <= 0) {
             this.current_db_obj.close();
             this.current_db_obj = null;
             this.initialized = false;
-            this.current_collection_obj = null;
+            this.current_collection_name = null;
             return true
         }
         else return false
@@ -239,7 +255,7 @@ async function test_methods() {
     // inst.run( "export_json", inst.run( "" ) );
     //inst.run("select_document", json_query={name:"John"}, projection={_id:0})
     // setTimeout( inst.run.bind(inst, "close"), 1200 )
-    // console.log("CURSOR 2: ", inst.current_collection_obj.find({}).count )
+    // console.log("CURSOR 2: ", inst.current_collection_name.find({}).count )
 }
 
 // const inst = new Mongo_Instance()
