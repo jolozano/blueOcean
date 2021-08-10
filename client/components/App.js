@@ -17,7 +17,7 @@ export default class App extends Component {
       selected_cohort: '', // name of the cohort selected
       current_page: 'Admin-Home',
       verified: false,//callbacks for login and logout buttons change this state and render appropriate screen
-      profile: [] //get profile obj on success of login, after log in it is array with undefined value
+      profile: [] //get profile obj on success of login, after logout it is array with undefined value
     };
     this.verifyUser = this.verifyUser.bind(this)//passed as props to banner and SSO components
     this.change_cohort = this.change_cohort.bind(this);
