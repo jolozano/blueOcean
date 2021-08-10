@@ -1,0 +1,143 @@
+{
+  "id": 332477,
+  "num_rows": 100,
+  "file_format": "json",
+  "name": "StudentSchema",
+  "array": true,
+  "columns": [
+    {
+      "name": "_id",
+      "null_percentage": 0,
+      "type": "Email Address",
+      "formula": null
+    },
+    {
+      "name": "credentials.password",
+      "null_percentage": 0,
+      "type": "Password",
+      "formula": null
+    },
+    {
+      "name": "credentials.username",
+      "null_percentage": 0,
+      "type": "Username",
+      "formula": null
+    },
+    {
+      "name": "pii.first_name",
+      "null_percentage": 0,
+      "type": "First Name",
+      "formula": null
+    },
+    {
+      "name": "pii.last_name",
+      "null_percentage": 0,
+      "type": "Last Name",
+      "formula": null
+    },
+    {
+      "name": "pii.email",
+      "null_percentage": 0,
+      "type": "Formula",
+      "value": "_id",
+      "formula": null
+    },
+    {
+      "name": "pii.gender",
+      "null_percentage": 1,
+      "type": "Gender",
+      "formula": null
+    },
+    {
+      "name": "pii.ets_date",
+      "null_percentage": 0,
+      "type": "Datetime",
+      "min": "10/01/2020",
+      "max": "07/28/2022",
+      "format": "%-m/%-d/%Y",
+      "formula": null
+    },
+    {
+      "name": "pii.current_unit",
+      "null_percentage": 0,
+      "type": "Street Address",
+      "formula": null
+    },
+    {
+      "name": "pii.phone_number",
+      "null_percentage": 8,
+      "type": "Phone",
+      "format": "###-###-####",
+      "formula": null
+    },
+    {
+      "name": "pii.marital_staus",
+      "null_percentage": 0,
+      "type": "Custom List",
+      "values": [
+        "Married",
+        "Divorced",
+        "Single",
+        "Widowed",
+        "Lone Wolf",
+        "Desperate"
+      ],
+      "selectionStyle": "random",
+      "distribution": null,
+      "formula": null
+    },
+    {
+      "name": "pii.terminal_date",
+      "null_percentage": 30,
+      "type": "Datetime",
+      "min": "07/28/2020",
+      "max": "06/28/2022",
+      "format": "%-m/%-d/%Y",
+      "formula": null
+    },
+    {
+      "name": "pii.student_img",
+      "null_percentage": 0,
+      "type": "Dummy Image URL",
+      "minHeight": 100,
+      "maxHeight": null,
+      "minWidth": 100,
+      "maxWidth": 250,
+      "format": "png",
+      "formula": null
+    },
+    {
+      "name": "tasks.uncompleted[4]",
+      "null_percentage": 0,
+      "type": "Number",
+      "min": 1,
+      "max": 100,
+      "decimals": 0,
+      "formula": null
+    },
+    {
+      "name": "tasks.completed[4]",
+      "null_percentage": 0,
+      "type": "Number",
+      "min": 1,
+      "max": 100,
+      "decimals": 0,
+      "formula": null
+    },
+    {
+      "name": "tasks.current",
+      "null_percentage": 0,
+      "type": "Number",
+      "min": 1,
+      "max": 100,
+      "decimals": 0,
+      "formula": null
+    },
+    {
+      "name": "admin_id",
+      "null_percentage": 0,
+      "type": "Email Address",
+      "formula": null
+    }
+  ]
+}
