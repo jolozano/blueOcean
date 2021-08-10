@@ -7,11 +7,13 @@ class CohortBar extends React.Component {
     constructor (props) {
         super(props);
         this.state = {
-            changing_cohort: false
+            changing_cohort: false,
+            selected_cohort: ''
         }
 
         this.add_cohort = this.add_cohort.bind(this);
         this.remove_cohort = this.remove_cohort.bind(this);
+        this.selected_cohort = this.selected_cohort.bind(this);
     }
 
     add_cohort () {
@@ -22,6 +24,10 @@ class CohortBar extends React.Component {
     remove_cohort () {
         console.log('removing a cohort');
         this.setState({changing_cohort: true});
+    }
+
+    selected_cohort () {
+        this.setState({selected_cohort: e.target.value});
     }
 
 
@@ -38,8 +44,13 @@ class CohortBar extends React.Component {
                     <span>Add Cohort</span>
                 </div>
             </div>
-            {this.state.changing_cohort === true && <form className={"cohort-bar-form"}>
-                <input className={'cohort-bar-input'} placeholder="Enter Cohort"></input>
+            {this.state.changing_cohort === true && 
+            <form 
+            onSubmit={()=>{alert(this.state.selected_cohort)}} 
+            className={"cohort-bar-form"}
+            onChange={()=>{this.selected_cohort}}
+            >
+                <input type="text" className={'cohort-bar-input'} placeholder="Enter Cohort"></input>
             </form>}
             <div className={"cohort-bar-title-box"}>
                 <h1 className={"cohort-bar-title"}>Current Cohorts:</h1>
