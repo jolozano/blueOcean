@@ -8,3 +8,4 @@ package-lock.json
 **/*-lock*.json
 ./.*/
 /public/bundle.js
+**/*.Identifier

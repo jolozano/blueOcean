@@ -8,8 +8,8 @@ class CohortProfile extends React.Component {
 
     render () {
         let student_profiles = [];
-        for(let i=0; i<5; i++) {
-            student_profiles.push(<StudentProfile />)
+        for(let student of this.props.assigned_students) {
+            student_profiles.push(<StudentProfile single_student={student.pii} />)
         }
 
         return (
@@ -18,7 +18,7 @@ class CohortProfile extends React.Component {
 
                 {student_profiles}
 
-                
+
             </div>
         )
     }
