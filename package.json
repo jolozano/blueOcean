@@ -6,7 +6,7 @@
     "start:dev": "npm run backend:dev & npm run frontend:dev",
     "backend": "node server/index.js",
     "frontend": "webpack -p",
-    "start": "npm run backend & npm run frontend"
+    "start": "npm run frontend; npm run backend"
   },
   "license": "ISC",
   "dependencies": {
