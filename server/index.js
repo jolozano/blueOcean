@@ -5,11 +5,6 @@ const express = require("express");
 const { ListCollectionsCursor } = require("mongodb");
 const MongoAPI = require("./db/MongoDB_Utility");
 
-const db = new MongoAPI((db_name = "Nguyen"));
-const collections = { students: null, admins: null, deliverables: null };
-
-const PORT = process.env.PORT;
-
 // const collection_cb = (table) => db.run("set_collection", table)
 // setTimeout( collection_cb.bind(db, "BUTTHOLE_Collection"), 100)
 
@@ -26,6 +21,9 @@ function callBack(client_res, db_err, db_res) {
 const all_collections = ["students", "admins", "default", "bases"];
 
 function server() {
+  const db = new MongoAPI((db_name = "Nguyen"));
+
+const PORT = process.env.PORT;
   const app = express();
   this._Parameters = {
     collection_name: "students",
