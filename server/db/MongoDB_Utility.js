@@ -22,7 +22,7 @@ const fs = require('fs');
 class Mongo_Instance {
     // Connect to a Mongo database
     // DB (Location of host) > DB > Collection (Table) >
-    constructor(db_name = "default", db_uri = "mongodb://localhost:27017/ASS", init = true) {
+    constructor(db_name = "default", db_uri = process.env.MONGO_DB_URI, init = true) {
         this.current_db_obj = null;
         this.current_collection_name = null
         this.db_name = db_name;
