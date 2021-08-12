@@ -93,7 +93,7 @@ class Mongo_Instance {
     show_collections(){
         this.current_db_obj.listCollections().toArray(function(err, names) {
             if(!err) {
-                console.log("Collection: ", names)
+                console.log("Collection: ", names);
             }
         });
     }

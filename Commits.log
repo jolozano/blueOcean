@@ -1,0 +1,6 @@
+11 Aug 2021:
+    - Changed CSS class ".cohort-bar-form" 'bottom' from 80px to 120px because it was on top of buttons
+    - Used ternary operator for the "Add/Remove" cohort buttons
+        - Used the .state.changing_cohort property to dictate action/text of buttons
+        - Added to the callback of the "Add" button
+    - Re-created .json seed documents; reflects limited cohort range.

@@ -18,12 +18,12 @@ class CohortBar extends React.Component {
 
     add_cohort () {
         console.log('adding a cohort');
-        this.setState({changing_cohort: true});
+        this.setState({changing_cohort: !this.state.changing_cohort});
     }
 
     remove_cohort () {
         console.log('removing a cohort');
-        this.setState({changing_cohort: true});
+        this.setState({changing_cohort: !this.state.changing_cohort});
     }
 
     selected_cohort () {
@@ -37,16 +37,16 @@ class CohortBar extends React.Component {
             <div className={"cohort-bar-control-box"}>
                 <div className={"cohort-bar-minus-box"}>
                     <FontAwesomeIcon onClick={this.remove_cohort} className={'cohort-minus'} icon={faMinus} />
-                    <span>Remove Cohort</span>
+                    <span>{this.state.changing_cohort ? "Cancel":"Remove Cohort"}</span>
                 </div>
                 <div className={"cohort-bar-add-box"}>
                     <FontAwesomeIcon onClick={this.add_cohort} className={'cohort-plus'} icon={faPlus} />
-                    <span>Add Cohort</span>
+                    <span>{this.state.changing_cohort ? "Save New Cohort":"Add Cohort"}</span>
                 </div>
             </div>
-            {this.state.changing_cohort === true && 
-            <form 
-            onSubmit={()=>{alert(this.state.selected_cohort)}} 
+            {this.state.changing_cohort === true &&
+            <form
+            onSubmit={()=>{alert(this.state.selected_cohort)}}
             className={"cohort-bar-form"}
             onChange={()=>{this.selected_cohort}}
             >
