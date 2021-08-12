@@ -2,6 +2,9 @@
 
 const express = require("express");
 const { ListCollectionsCursor } = require("mongodb");
+const { OAuth2Client } = require('google-auth-library')
+const client = new OAuth2Client('854591671315-j148rl3knd8t3j4tig9p3qhdpht4da91.apps.googleusercontent.com')
+
 const MongoAPI = require("./db/MongoDB_Utility");
 
 const db = new MongoAPI(db_name="Nguyen")
@@ -108,6 +111,19 @@ function server(){  const app = express();
     console.log("Debugging...")
     res.send(  db.initialized )
   })
+
+  app.post("/api/v1/auth/google", async (req, res) => {
+    const { token }  = req.body
+    const ticket = await client.verifyIdToken({
+        idToken: token,
+        audience: '854591671315-j148rl3knd8t3j4tig9p3qhdpht4da91.apps.googleusercontent.com'
+    });
+    const { name, email, picture } = ticket.getPayload();
+    const user = {}
+
+    res.status(201)
+    res.json(user)
+})
 
   app.listen(5000, () => {
     console.log("listening on Port 5000");
