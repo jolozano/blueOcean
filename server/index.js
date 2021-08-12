@@ -115,4 +115,8 @@ function server() {
   });
 }
 
-const nun = server();
+try {
+  server();
+} catch(e) {
+  console.log('CRITICAL FAILURE', e);
+}
