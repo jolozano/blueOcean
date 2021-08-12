@@ -17,9 +17,9 @@ class StudentQuestionnaire extends Component {
         }
         this.handleSubmit=this.handleSubmit.bind(this)
     }
-    
 
-        
+
+
 
 
 
@@ -74,6 +74,13 @@ terminal_leavehandler = (event) => {
     })
 }
 
+update_form = (event) => {
+    const key = event.target.id
+    this.state[key] = event.target.value
+    e.preventDefault()
+}
+
+
 
 handleSubmit = (event) => {
     alert(`${this.state.firstName} ${this.state.lastName}  Registry Successful`)
@@ -91,7 +98,7 @@ handleSubmit = (event) => {
         terminal_leave: "",
     })
  event.preventDefault()
-    
+
 };
 
 
@@ -102,7 +109,7 @@ render() {
         <div className={"student-questionnaire-content"}>
                 <h1 className={"student-questionnaire-title"}>New Student Registration</h1>
             <form className={"student-questionnaire-form"} onSubmit={this.handleSubmit}>
-                <label>FirstName :</label> <input type="text" value={this.state.firstName} onChange={this.firsthandler} placeholder="FirstName..." /><br />
+                <label>FirstName :</label> <input type="text" value={this.state.firstName} onChange={this.firsthandler} placeholder="FirstName..." required/><br />
                 <label>LastName :</label> <input type="text" value={this.state.lastName} onChange={this.lasthandler} placeholder="LastName..." /><br />
                 <label>Email :</label> <input type="text" value={this.state.email} onChange={this.emailhandler} placeholder="Email..." /><br />
                 <label>Gender :</label><select onChange={this.genderhandler} defaultValue="Select Gender"/>
@@ -117,16 +124,16 @@ render() {
                     <option defaultValue>Select Status</option>
                     <option value="Single">Male</option>
                     <option value="Married">Female</option>
-                <label>Terminal Leave :</label><select onChange={this.terminal_leavehandler} defaultValue="Terminal Leave"/>
+                <label>Terminal Leave :</label><select id="terminal_leave" onChange={this.terminal_leavehandler} defaultValue="Terminal Leave"/>
                     <option defaultValue>Select Status</option>
                     <option value="Yes">Yes</option>
                     <option value="No">No</option>
                 <input className={'student-questionnaire-submit-button'} type="submit" value="Submit" />
-                
+
             </form>
 
         </div>
-        
+
         )
     }
 }
