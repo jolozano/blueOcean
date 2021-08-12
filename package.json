@@ -1,8 +1,11 @@
 {
   "name": "react-mvp-template",
   "scripts": {
-    "backend": "nodemon server/index.js",
-    "frontend": "webpack -d --watch",
+    "backend:dev": "nodemon server/index.js",
+    "frontend:dev": "webpack -d --watch",
+    "start:dev": "npm run backend:dev & npm run frontend:dev",
+    "backend": "node server/index.js",
+    "frontend": "webpack",
     "start": "npm run backend & npm run frontend"
   },
   "license": "ISC",
