@@ -16,7 +16,7 @@ export default class App extends Component {
       selected_student: 0, // ID of student selected
       selected_cohort_id: 7, // name of the cohort selected
       current_page: 'Admin-Home',
-      verified: false,//callbacks for login and logout buttons change this state and render appropriate screen
+      verified: true,//callbacks for login and logout buttons change this state and render appropriate screen
       profile: [], //get profile obj on success of login, after log in it is array with undefined value
       cached_students: {}, // Object with key being cohort hum id, and array of students
       students_data:[],
