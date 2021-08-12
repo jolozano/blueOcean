@@ -2,7 +2,6 @@
 require("dotenv").config();
 
 const express = require("express");
-const { ListCollectionsCursor } = require("mongodb");
 const MongoAPI = require("./db/MongoDB_Utility");
 
 // const collection_cb = (table) => db.run("set_collection", table)
@@ -11,6 +10,7 @@ const MongoAPI = require("./db/MongoDB_Utility");
 // const student_collection = db.current_collection_obj.collection( '' )
 
 function callBack(client_res, db_err, db_res) {
+  console.log('db_err', db_err);
   if (db_err) {
     client_res.status(404).send(db_err);
   } else {
