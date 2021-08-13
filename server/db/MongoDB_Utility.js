@@ -122,23 +122,6 @@ class Mongo_Instance {
         this.current_db_obj.drop(name)
     }
 
-    insert_document(arr_obj, collection_name = this.current_collection_name) {
-        // Inserts an array of objects (documents) into a given collection (table)
-        // arr_obj = [{ name: "Company Inc", address: "Highway 37" }]
-        !Array.isArray(arr_obj) && (arr_obj = [arr_obj]);
-        // console.log("ARR: ", arr_obj)
-        if (collection_name && arr_obj.length > 0) {
-            const collection_inst = this.current_db_obj.collection(collection_name)
-            collection_inst.insertMany(arr_obj, (err, res) => {
-                if (err) throw err
-                console.log("Number of documents inserted: ", res.insertedCount);
-                return true
-            });
-        }
-        else console.log("Collection obj: ", collection_name)
-        return false // Not really needed, but whatever.
-    }
-
     seed_doc(path, collection) {
         console.log("Seeding: ", path)
         const data = fs.readFileSync(path);
@@ -159,6 +142,43 @@ class Mongo_Instance {
             callBack("Error: Invalid collection argument")
         }
     }
+
+    insert_document(arr_obj, collection_name = this.current_collection_name) {
+        // Inserts an array of objects (documents) into a given collection (table)
+        // arr_obj = [{ name: "Company Inc", address: "Highway 37" }]
+        !Array.isArray(arr_obj) && (arr_obj = [arr_obj]);
+        // console.log("ARR: ", arr_obj)
+        if (collection_name && arr_obj.length > 0) {
+            const collection_inst = this.current_db_obj.collection(collection_name)
+            collection_inst.insertMany(arr_obj, (err, res) => {
+                if (err) throw err
+                console.log("Number of documents inserted: ", res.insertedCount);
+                return true
+            });
+        }
+        else console.log("Collection obj: ", collection_name)
+        return false // Not really needed, but whatever.
+    }
+
+    update_document({json_query, new_values, collection_name = this.current_collection_name, callBack = this.display} = arguments) {
+        // Updates a document; can replace, push, set, etc
+        // json_query is the match case (similar to select_document) - e.g {_id:100} (updates any document with the ID of 100)
+        // new_values is what will modify the match case - e.g {$push: { myArray: 'New Value } } (uses the $push operator to add 'New Value' to the 'myArray' field )
+        // https://docs.mongodb.com/manual/reference/operator/update/push/
+        console.log("Update Arguments: ", arguments, new_values)
+        if (collection_name) {
+            const collection_inst = this.current_db_obj.collection(collection_name)
+            collection_inst.updateOne(
+                json_query,
+                new_values,
+                {new: true},
+                callBack
+            );
+        }
+        else console.log("Could not update collection: ", json_query)
+        return false // Not really needed, but whatever.
+    }
+
     select_all() {
 
     }
@@ -176,8 +196,9 @@ class Mongo_Instance {
         this.current_collection_name.count().then((count) => console.log(count));
     }
 
-    drop_collection(callBack = this.display) {
-        this.current_collection_name.drop(callBack);
+    drop_collection({collection_name=this.collection_name, callBack = this.display} = arguments ) {
+        // this.current_collection_name.drop(callBack);
+        this.current_db_obj.collection(collection_name).drop(callBack)
     }
     close() {
         if (this.processes <= 0) {

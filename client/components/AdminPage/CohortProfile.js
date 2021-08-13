@@ -9,11 +9,11 @@ class CohortProfile extends React.Component {
     render () {
         let student_profiles = [];
         for(let student of this.props.assigned_students) {
-            student_profiles.push(<StudentProfile single_student={student.pii} />)
+            student_profiles.push(<StudentProfile key={student.pii.first_name} single_student={student.pii} />)
         }
 
         return (
-            <div className={'cohort-profile-content'}>
+            <div className={'cohort-profile-content'}  >
                 <h1 className={'cohort-profile-title'}>{this.props.selected_cohort}</h1>
 
                 {student_profiles}
