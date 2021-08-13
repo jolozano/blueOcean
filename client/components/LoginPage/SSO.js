@@ -36,7 +36,10 @@ export default class SignOn extends Component {
               }
             })
             .then((res) => res.json())
-            .then((response) => console.log(response))
+            .then((profile) => {
+                this.props.callBack(profile);
+                console.log(profile)
+            })
             // store returned user somehow
             // console.log(res)
         //   }
