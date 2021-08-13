@@ -73,7 +73,6 @@ class CohortBar extends React.Component {
     }
 
     selected_cohort (e) {
-        console.log("SELECT COHORT: ", e.target.value)
         this.setState({selected_cohort: e.target.value});
     }
 

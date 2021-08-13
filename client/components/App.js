@@ -98,7 +98,7 @@ export default class App extends Component {
     } )
   }
   update_students(force=false){
-    console.log("Updating student...");
+    // console.log("Updating student...");
     if(this.state.selected_cohort_id in this.state.cached_students){
       // Used as memoization
       console.log("Memoizing...")
