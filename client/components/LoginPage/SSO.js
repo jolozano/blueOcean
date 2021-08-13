@@ -57,7 +57,7 @@ export default class SignOn extends Component {
                 <div className='SSO'>
                     <h1 className='title1SSO'>Transition Tracker</h1>
                     <GoogleLogin
-                        clientId={"854591671315-j148rl3knd8t3j4tig9p3qhdpht4da91.apps.googleusercontent.com"}
+                        clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID}
                         buttonText="Log in with Google"
                         onSuccess={this.handleLogin}
                         onFailure={this.handleLogin}
@@ -73,7 +73,7 @@ export default class SignOn extends Component {
                         <h2>Unauthorized User. Please Sign in with verified user credentials</h2>
                     </div>
                     <GoogleLogin
-                        clientId={"854591671315-j148rl3knd8t3j4tig9p3qhdpht4da91.apps.googleusercontent.com"}
+                        clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID}
                         buttonText="Log in with Google"
                         onSuccess={this.handleLogin}
                         onFailure={this.handleLogin}
