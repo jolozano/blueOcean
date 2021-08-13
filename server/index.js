@@ -145,17 +145,17 @@ const PORT = process.env.PORT;
   app.listen(PORT, () => {
     console.log(`listening on Port ${PORT}`);
   })
+  
   app.post("/api/v1/auth/google", async (req, res) => {
     const { token }  = req.body
     const ticket = await client.verifyIdToken({
         idToken: token,
         audience: process.env.REACT_APP_GOOGLE_CLIENT_ID
     });
-    const { name, email, picture } = ticket.getPayload();
-    const user = await print_all();
+    const { name, email } = ticket.getPayload();
 
     res.status(201)
-    res.json(user)
+    res.json({ name, email })
   })
 }
 
