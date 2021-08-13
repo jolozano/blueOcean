@@ -10,6 +10,7 @@ export default class SignOn extends Component {
         }
     };
     handleLogin = (googleData) => {
+        console.log("GOOGLE DATA: ", googleData)
         //puts profile details in object
         // const profile = response.profileObj
         //example of profile obj

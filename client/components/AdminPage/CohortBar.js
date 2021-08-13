@@ -8,6 +8,7 @@ class CohortBar extends React.Component {
         super(props);
         this.state = {
             changing_cohort: false,
+            action: "add",    // Can be "add" or "remove"
             selected_cohort: ''
         }
 
@@ -16,17 +17,62 @@ class CohortBar extends React.Component {
         this.selected_cohort = this.selected_cohort.bind(this);
     }
 
+    make_post(body, URI="/api/update"){
+
+        const res = fetch( URI , {
+            method: "POST",
+            body: JSON.stringify( body ),
+            headers: {
+            "Content-Type": "application/json"
+            }
+        })
+        .then( (res) => { return res.json(); })
+        .then( (data) => { console.log("RESPONSE: ", JSON.stringify( data ) ) })
+    }
+
     add_cohort () {
-        console.log('adding a cohort');
-        this.setState({changing_cohort: !this.state.changing_cohort});
+        console.log("STATE: ", this.state)
+        this.setState( {changing_cohort: !this.state.changing_cohort, action: "add"} );
+
+        if( this.state.changing_cohort){
+            let payload = {}
+            if(  this.state.action=="add"  ){
+                console.log('adding a cohort');
+                payload = {
+                    "collection_name": 'admins',
+                    "json_query": {_id:this.props.current_user._id },
+                    "new_values": {$push: { cohorts: this.state.selected_cohort } }
+                }
+            }
+            if(  this.state.action=="remove"){
+                console.log('removing a cohort', this.state.selected_cohort );
+                payload = {
+                    "collection_name": 'admins',
+                    "json_query": {_id:this.props.current_user._id },
+                    //"new_values": {$pull: { cohorts: {$in: [this.state.selected_cohort] } } }
+                    "new_values": {$pull: { cohorts:this.state.selected_cohort } }
+                }
+            }
+            this.make_post(payload)
+
+            this.props.change_cohort(this.state.selected_cohort, 1, this.state.action )
+        }
     }
 
     remove_cohort () {
         console.log('removing a cohort');
-        this.setState({changing_cohort: !this.state.changing_cohort});
+        this.setState({changing_cohort: !this.state.changing_cohort, action: "remove"});
+
+        const payload = {
+            "collection_name": 'admins',
+            "json_query": {_id:this.props.current_user._id },
+            "new_values": {$push: { cohorts: this.state.selected_cohort } }
+        }
+        //this.make_post(payload)
+        this.props.change_cohort(this.state.selected_cohort, 1, true )
     }
 
-    selected_cohort () {
+    selected_cohort (e) {
         this.setState({selected_cohort: e.target.value});
     }
 
@@ -41,31 +87,31 @@ class CohortBar extends React.Component {
                 </div>
                 <div className={"cohort-bar-add-box"}>
                     <FontAwesomeIcon onClick={this.add_cohort} className={'cohort-plus'} icon={faPlus} />
-                    <span>{this.state.changing_cohort ? "Save New Cohort":"Add Cohort"}</span>
+                    <span>{this.state.changing_cohort ? ((this.state.action=="add") ? "Save New Cohort":"Remove Cohort"):"Add Cohort"}</span>
                 </div>
             </div>
             {this.state.changing_cohort === true &&
             <form
-            onSubmit={()=>{alert(this.state.selected_cohort)}}
+            onSubmit={this.selected_cohort}
             className={"cohort-bar-form"}
-            onChange={()=>{this.selected_cohort}}
+            onChange={this.selected_cohort}
             >
-                <input type="text" className={'cohort-bar-input'} placeholder="Enter Cohort"></input>
+                <input type="text" className={'cohort-bar-input'}  placeholder="Enter Cohort" minlength="2" required></input>
             </form>}
             <div className={"cohort-bar-title-box"}>
                 <h1 className={"cohort-bar-title"}>Current Cohorts:</h1>
                 <ul className={"cohort-bar-list"}>
                     {this.props.cohortList.map((item, index)=>{
                         return (
-                            <li key={`Cohort-${item.name}-${index}`}
+                            <li key={`Cohort-${item}-${index}`}
                             className={"cohort-bar-list-item"}
-                            id={item.num}
+                            id={item}
                             onClick={(e)=>{
                                 this.props.change_cohort(e.target.textContent, e.target.id);
                                 this.props.change_page('Admin-Cohort-Profile');
                                 e.preventDefault();
                                 }}>
-                                {item.name}
+                                {"MCSP-"+item}
                             </li>
                         )
                     })}

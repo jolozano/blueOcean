@@ -4,3 +4,7 @@
         - Used the .state.changing_cohort property to dictate action/text of buttons
         - Added to the callback of the "Add" button
     - Re-created .json seed documents; reflects limited cohort range.
+
+12 Aug 2021
+    - Addded universal update-form method to Questionaire.js
+    - Added "update_document" method in Utility.js
