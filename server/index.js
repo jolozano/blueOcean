@@ -142,14 +142,9 @@ function server() {
     res.send(  this._Parameters )
   })
 
-<<<<<<< HEAD
 
   app.post("/api/addStudent", (req, res) => {
     console.log('req.body', req.body);
-=======
-  app.listen(PORT, () => {
-    console.log(`listening on Port ${PORT}`);
->>>>>>> 5f5333e81300b244bbbc0c002065ad2a15ff8392
   })
   
   app.post("/api/v1/auth/google", async (req, res) => {
@@ -158,12 +153,7 @@ function server() {
         idToken: token,
         audience: process.env.REACT_APP_GOOGLE_CLIENT_ID
     });
-<<<<<<< HEAD
-    const { name, email, picture } = ticket.getPayload();
-    const user = email;
-=======
     const { name, email } = ticket.getPayload();
->>>>>>> 5f5333e81300b244bbbc0c002065ad2a15ff8392
 
     res.status(201)
     res.json({ name, email })
