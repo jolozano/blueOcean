@@ -142,10 +142,6 @@ const PORT = process.env.PORT;
     res.send(  this._Parameters )
   })
 
-  app.listen(5000, () => {
-    console.log("listening on Port 5000");
-  });
-
   app.listen(PORT, () => {
     console.log(`listening on Port ${PORT}`);
   })
