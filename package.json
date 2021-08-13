@@ -5,8 +5,8 @@
     "frontend:dev": "webpack -d --watch",
     "start:dev": "npm run backend:dev & npm run frontend:dev",
     "backend": "node server/index.js",
-    "frontend": "webpack",
-    "start": "npm run backend & npm run frontend"
+    "frontend": "webpack -p",
+    "start": "npm run frontend; npm run backend"
   },
   "license": "ISC",
   "dependencies": {

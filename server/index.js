@@ -2,10 +2,8 @@
 require("dotenv").config();
 
 const express = require("express");
-const { ListCollectionsCursor } = require("mongodb");
 const { OAuth2Client } = require('google-auth-library')
-const client = new OAuth2Client('854591671315-j148rl3knd8t3j4tig9p3qhdpht4da91.apps.googleusercontent.com')
-
+const client = new OAuth2Client(process.env.REACT_APP_GOOGLE_CLIENT_ID);
 const MongoAPI = require("./db/MongoDB_Utility");
 
 // const collection_cb = (table) => db.run("set_collection", table)
@@ -14,6 +12,7 @@ const MongoAPI = require("./db/MongoDB_Utility");
 // const student_collection = db.current_collection_obj.collection( '' )
 
 function callBack(client_res, db_err, db_res) {
+  console.log('db_err', db_err);
   if (db_err) {
     client_res.status(404).send(db_err);
   } else {
@@ -143,22 +142,31 @@ function server() {
     res.send(  this._Parameters )
   })
 
+<<<<<<< HEAD
 
   app.post("/api/addStudent", (req, res) => {
     console.log('req.body', req.body);
+=======
+  app.listen(PORT, () => {
+    console.log(`listening on Port ${PORT}`);
+>>>>>>> 5f5333e81300b244bbbc0c002065ad2a15ff8392
   })
   
   app.post("/api/v1/auth/google", async (req, res) => {
     const { token }  = req.body
     const ticket = await client.verifyIdToken({
         idToken: token,
-        audience: '854591671315-j148rl3knd8t3j4tig9p3qhdpht4da91.apps.googleusercontent.com'
+        audience: process.env.REACT_APP_GOOGLE_CLIENT_ID
     });
+<<<<<<< HEAD
     const { name, email, picture } = ticket.getPayload();
     const user = email;
+=======
+    const { name, email } = ticket.getPayload();
+>>>>>>> 5f5333e81300b244bbbc0c002065ad2a15ff8392
 
     res.status(201)
-    res.json(user)
+    res.json({ name, email })
   })
   app.listen(PORT, () => {
     console.log(`listening on Port ${PORT}`);
