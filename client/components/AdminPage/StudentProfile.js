@@ -17,13 +17,13 @@ class StudentProfile extends React.Component {
                 "marital_staus": "Lone Wolf",
                 "terminal_date": "3/26/2021",
                 "student_img": "http://dummyimage.com/174x100.png/5fa2dd/ffffff",
-                ...props.single_student
+                // ...props.single_student   // DONT DO THIS!!!!
             },
         }
     }
 
     render () {
-        let studentData = this.state.pii;
+        let studentData = {...this.state.pii, ...this.props.single_student}
         return (
             <div className={"student-profile"}>
                 <table className={"student-profile-table"}>

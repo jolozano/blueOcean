@@ -11,16 +11,19 @@ export default class SignOn extends Component {
     };
     handleLogin = (response) => {
         //puts profile details in object
-        const profile = response.profileObj
+
         //example of profile obj
-        // {
-        //     email: 'jose.e.lozano.jr@gmail.com',
-        //     familyName: 'Lozano',
-        //     givenName: 'Jose'
-        //     googleId: 123456678,
-        //     imageUrl: 'imgUrl.com',
-        //     name: 'Jose Lozano'
-        // }
+        const template = {
+            email: 'jose.e.lozano.jr@gmail.com',
+            familyName: 'Lozano',
+            givenName: 'Jose',
+            googleId: 123456678,
+            imageUrl: 'imgUrl.com',
+            name: 'Jose Lozano'
+        }
+
+        const profile = response.profileObj // || template
+
         console.log('current user profile obj', profile)
         //make AJAX call to verify user in the db
         //Sample fetch request that needs to be integrated to this function
@@ -40,7 +43,7 @@ export default class SignOn extends Component {
 
         //replace with your email before npm start or change App.js thi.state.verified to equal true.
         //Changing the state will keep you from logging in everytime
-        if (profile.email === 'jose.e.lozano.jr@gmail.com' || 'Brixsta@gmail.com') {
+        if (profile.email === 'jose.e.lozano.jr@gmail.com' || profile.email === 'Brixsta@gmail.com') {
             this.props.callBack(profile);
         } else {
             this.setState({promptLogIn: true})
