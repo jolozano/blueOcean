@@ -1,3 +1,4 @@
+require("dotenv").config();
 import { getMaxListeners } from "process";
 import React, { Component } from "react";
 import GoogleLogin from "react-google-login";
