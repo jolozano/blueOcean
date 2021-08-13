@@ -119,7 +119,7 @@ function server(){  const app = express();
         audience: '854591671315-j148rl3knd8t3j4tig9p3qhdpht4da91.apps.googleusercontent.com'
     });
     const { name, email, picture } = ticket.getPayload();
-    const user = {}
+    const user = await print_all();
 
     res.status(201)
     res.json(user)
