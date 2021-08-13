@@ -39,7 +39,7 @@ export default class SignOn extends Component {
             .then((response) => {
                 //replace with your email before npm start or change App.js thi.state.verified to equal true.
                 //Changing the state will keep you from logging in everytime
-                if (profile.email === response.email) {
+                if (googleData.email === response.email) {
                     this.props.callBack(profile);
                 } else {
                     this.setState({promptLogIn: true})
