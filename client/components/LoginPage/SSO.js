@@ -9,9 +9,10 @@ export default class SignOn extends Component {
             promptLogIn: false //displays prompt after unsuccesful login
         }
     };
-    handleLogin = (response) => {
+    handleLogin = (googleData) => {
+        console.log("GOOGLE DATA: ", googleData)
         //puts profile details in object
-        const profile = response.profileObj
+        // const profile = response.profileObj
         //example of profile obj
         // {
         //     email: 'jose.e.lozano.jr@gmail.com',
@@ -21,30 +22,32 @@ export default class SignOn extends Component {
         //     imageUrl: 'imgUrl.com',
         //     name: 'Jose Lozano'
         // }
-        console.log('current user profile obj', profile)
+        // console.log('current user profile obj', profile)
         //make AJAX call to verify user in the db
         //Sample fetch request that needs to be integrated to this function
         // const handleLogin = async googleData => {
-        //     const res = await fetch("/api/v1/auth/google", {
-        //         method: "POST",
-        //         body: JSON.stringify({
-        //         token: googleData.tokenId
-        //       }),
-        //       headers: {
-        //         "Content-Type": "application/json"
-        //       }
-        //     })
-        //     const data = await res.json()
-        //     // store returned user somehow
+            const res = fetch("/api/v1/auth/google", {
+                method: "POST",
+                body: JSON.stringify({
+                token: googleData.tokenId
+              }),
+              headers: {
+                "Content-Type": "application/json"
+              }
+            })
+            .then((res) => res.json())
+            .then((response) => console.log(response))
+            // store returned user somehow
+            // console.log(res)
         //   }
 
         //replace with your email before npm start or change App.js thi.state.verified to equal true.
         //Changing the state will keep you from logging in everytime
-        if (profile.email === 'jose.e.lozano.jr@gmail.com' || 'Brixsta@gmail.com') {
-            this.props.callBack(profile);
-        } else {
-            this.setState({promptLogIn: true})
-        }
+        // if (profile.email === 'jose.e.lozano.jr@gmail.com') {
+        //     this.props.callBack(profile);
+        // } else {
+        //     this.setState({promptLogIn: true})
+        // }
     }
 
     render() {
