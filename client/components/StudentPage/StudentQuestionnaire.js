@@ -1,3 +1,4 @@
+import { getMaxListeners } from 'process';
 import React, { Component } from 'react';
 
 class StudentQuestionnaire extends Component {
@@ -83,8 +84,42 @@ update_form = (event) => {
 
 
 handleSubmit = (event) => {
-    alert(`${this.state.firstName} ${this.state.lastName}  Registry Successful`)
-    console.log(this.state);
+    let myRe = new RegExp('[^@]+')
+    let username = myRe.exec(this.state.email)
+    const res = fetch("/api/addStudent", {
+        method: "POST",
+        body: JSON.stringify({
+            "_id": this.state.email,
+            "credentials": {
+                "password": null,
+                "username": username[0]
+            },
+            "pii": {
+                "first_name": this.state.firstName,
+                "last_name": this.state.lastName,
+                "email": this.state.email,
+                "gender": this.state.gender,
+                "ets_date": this.state.ets_date,
+                "current_unit": this.state.current_unit,
+                "phone_number": this.state.phone_number,
+                "marital_staus": this.state.marital_status,
+                "terminal_date": this.state.terminal_date,
+                "student_img": "http://dummyimage.com/178x100.png/dddddd/000000"
+            },
+            "tasks": {
+                "uncompleted": [],
+                "completed": [],
+                "current": 55
+            },
+            "admin_id": "default_admin@nguyen.com",
+            "cohort_id": 1
+        }),
+        headers: {
+        "Content-Type": "application/json"
+      }
+    })
+    // alert(`${this.state.firstName} ${this.state.lastName}  Registry Successful`)
+    console.log("this.state", this.state);
     this.setState({
         firstName: "",
         lastName: "",

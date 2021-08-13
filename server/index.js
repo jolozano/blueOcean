@@ -110,10 +110,10 @@ const PORT = process.env.PORT;
     console.log("Debugging...");
     res.send(db.initialized);
   });
-
-  app.listen(PORT, () => {
-    console.log(`listening on Port ${PORT}`);
+  app.post("/api/addStudent", (req, res) => {
+    console.log('req.body', req.body);
   })
+  
   app.post("/api/v1/auth/google", async (req, res) => {
     const { token }  = req.body
     const ticket = await client.verifyIdToken({
@@ -121,10 +121,13 @@ const PORT = process.env.PORT;
         audience: '854591671315-j148rl3knd8t3j4tig9p3qhdpht4da91.apps.googleusercontent.com'
     });
     const { name, email, picture } = ticket.getPayload();
-    const user = await print_all();
+    const user = await email;
 
     res.status(201)
     res.json(user)
+  })
+  app.listen(PORT, () => {
+    console.log(`listening on Port ${PORT}`);
   })
 }
 

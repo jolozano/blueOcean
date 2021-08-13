@@ -35,18 +35,19 @@ export default class SignOn extends Component {
               }
             })
             .then((res) => res.json())
-            .then((response) => console.log(response))
+            .then((response) => {
+                //replace with your email before npm start or change App.js thi.state.verified to equal true.
+                //Changing the state will keep you from logging in everytime
+                if (profile.email === response) {
+                    this.props.callBack(profile);
+                } else {
+                    this.setState({promptLogIn: true})
+                }
+            })
             // store returned user somehow
             // console.log(res)
         //   }
 
-        //replace with your email before npm start or change App.js thi.state.verified to equal true.
-        //Changing the state will keep you from logging in everytime
-        // if (profile.email === 'jose.e.lozano.jr@gmail.com') {
-        //     this.props.callBack(profile);
-        // } else {
-        //     this.setState({promptLogIn: true})
-        // }
     }
 
     render() {
