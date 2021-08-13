@@ -143,9 +143,7 @@ const PORT = process.env.PORT;
     res.send(  this._Parameters )
   })
 
-  app.listen(5000, () => {
-    console.log("listening on Port 5000");
-  });
+
   app.post("/api/addStudent", (req, res) => {
     console.log('req.body', req.body);
   })
@@ -157,7 +155,7 @@ const PORT = process.env.PORT;
         audience: '854591671315-j148rl3knd8t3j4tig9p3qhdpht4da91.apps.googleusercontent.com'
     });
     const { name, email, picture } = ticket.getPayload();
-    const user = await email;
+    const user = email;
 
     res.status(201)
     res.json(user)
