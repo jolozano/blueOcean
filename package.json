@@ -1,28 +1,25 @@
 {
   "name": "react-mvp-template",
   "scripts": {
-    "backend": "nodemon server/index.js",
-    "frontend": "webpack -d --watch",
+    "backend:dev": "nodemon server/index.js",
+    "frontend:dev": "webpack -d --watch",
+    "start:dev": "npm run backend:dev & npm run frontend:dev",
+    "backend": "node server/index.js",
+    "frontend": "webpack",
     "start": "npm run backend & npm run frontend"
   },
   "license": "ISC",
-  "devDependencies": {
+  "dependencies": {
     "@babel/core": "^7.4.5",
     "@babel/preset-env": "^7.4.5",
     "@babel/preset-react": "^7.0.0",
-    "babel-loader": "^8.0.6",
-    "css-loader": "^2.1.1",
-    "nodemon": "^2.0.12",
-    "style-loader": "^0.23.1",
-    "webpack": "^4.32.2",
-    "webpack-cli": "^3.3.2"
-  },
-  "dependencies": {
     "@fortawesome/fontawesome": "^1.1.8",
     "@fortawesome/fontawesome-free-regular": "^5.0.13",
     "@fortawesome/fontawesome-free-solid": "^5.0.13",
     "@fortawesome/fontawesome-svg-core": "^1.2.35",
     "@fortawesome/react-fontawesome": "^0.1.14",
+    "babel-loader": "^8.0.6",
+    "css-loader": "^2.1.1",
     "dotenv": "^10.0.0",
     "env": "^0.0.2",
     "express": "^4.17.1",
@@ -30,11 +27,15 @@
     "font-awesome": "^4.7.0",
     "mongodb": "^4.0.1",
     "node": "^16.5.0",
+    "nodemon": "^2.0.12",
     "nodejs": "^0.0.0",
     "pg": "^8.6.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-file-reader": "^1.1.4",
-    "react-google-login": "^5.2.2"
+    "react-google-login": "^5.2.2",
+    "style-loader": "^0.23.1",
+    "webpack": "^4.32.2",
+    "webpack-cli": "^3.3.2"
   }
 }
