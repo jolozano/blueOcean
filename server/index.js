@@ -3,7 +3,7 @@ require("dotenv").config();
 
 const express = require("express");
 const { OAuth2Client } = require('google-auth-library')
-const client = new OAuth2Client(process.env.REACT_APP_GOOGLE_CLIENT_ID);
+const client = new OAuth2Client('854591671315-j148rl3knd8t3j4tig9p3qhdpht4da91.apps.googleusercontent.com');
 const MongoAPI = require("./db/MongoDB_Utility");
 
 // const collection_cb = (table) => db.run("set_collection", table)
@@ -151,7 +151,7 @@ function server() {
     const { token }  = req.body
     const ticket = await client.verifyIdToken({
         idToken: token,
-        audience: process.env.REACT_APP_GOOGLE_CLIENT_ID
+        audience: '854591671315-j148rl3knd8t3j4tig9p3qhdpht4da91.apps.googleusercontent.com'
     });
     const { name, email } = ticket.getPayload();
 
